@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "es5",
+            "es2015",
+            "es2015.promise"
+        ],
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es6",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "compileOnSave": false,
+    "exclude": [
+        "node_modules"
+    ],
+    "types": [
+        "jasmine",
+        "webpack-env"
+    ]
+}

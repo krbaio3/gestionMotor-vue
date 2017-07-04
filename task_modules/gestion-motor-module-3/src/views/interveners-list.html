@@ -1,0 +1,90 @@
+<div class="col-1920-8 top-interveners grouper interveners-list-box">			
+	<div class="intervenerList">
+  <div class="bk-title-table">
+    <h1 class="title">Relación de intervinientes</h1>
+  </div>
+  <div class="bk-table">
+    <table class="table scrollable-table">
+      <colgroup>
+        <col class="w-40">
+        <col class="w-89">
+        <col class="w-550">
+        <col class="w-155">
+        <col class="w-155">
+        <col class="w-90">
+		<col class="w-90">
+        <col class="w-50">
+        <col class="w-23">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="text-left">Tipo</th>
+          <th class="text-left">Documento</th>
+          <th class="text-left">Nombre y apellidos/Razón social</th>
+          <th class="text-left">Relación-orden</th>	
+          <th class="text-left">Sit. Relación</th>
+          <th class="text-center">Fecha alta</th>
+		  <th class="text-center">Fecha vto.</th>
+		  <th class="text-center">Id.</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+    <div class="scrollable-body">
+      <table class="table scrollable-table">
+        <colgroup>
+          <col class="w-40">
+          <col class="w-89">
+          <col class="w-550">
+          <col class="w-155">
+          <col class="w-155">
+          <col class="w-90">
+		  <col class="w-90">
+          <col class="w-50">
+          <col class="w-10">
+        </colgroup>
+        <tbody>
+			<tr ng-repeat="row in vm.intervenersList">
+			<td>{{row.documentTypes}}</td>
+            <td>{{row.docId}}</td>
+			<td><a>{{row.name}}</a></td>
+            <td>{{row.relationType}}</td>
+            <td>{{row.relationStatus}}</td>
+            <td>{{row.inclusionDate}}</td>
+            <td>{{row.expirationDate}}</td>
+            <td class="bki-success"></td>
+			<td></td>
+          </tr>
+		  <!--<tr>
+			<td>DNI</td>
+            <td>12345678D</td>
+			<td><a>ALBERTO FERNÁNDEZ CÓPOLA</a></td>
+            <td>TITULAR 1</td>
+            <td>ACTIVO</td>
+            <td>11/09/2014</td>
+            <td></td>
+            <td></td>
+			<td></td>
+          </tr>-->
+        </tbody>
+      </table>
+    </div>
+    <table class="table">
+      <tfoot>
+        <tr>
+          <td colspan="8">
+            <div class="form-inline">
+              <div class="form-group output clearfix">
+                <strong>Tipo de disponibilidad:</strong>
+                <span>DISPONIBLE</span>
+              </div>
+              <div bk-mastertable="obtenerDisponibilidadCtto" ng-model="vm.availability"></div>
+              <button ng-transclude="ng-transclude" class="bk-with-icon bk-button" bk-button="bk-button" type="button"><span class="bki-master-table ng-scope"></span></button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+</div>

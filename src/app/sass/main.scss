@@ -1,0 +1,45 @@
+// @1 VARIABLES
+// @2 TERCEROS
+// 	  @2.1 COMPASS (OBLIGATORIO)
+// @3 NU-NEO-CORE STYLES (OBLIGATORIO)
+//    @3.1 COMPONENTES NO INCLUIDOS (OPCIONAL)
+//    @3.2 COMPONENTES y ELEMENTOS (OBLIGATORIO)
+// @4 ESTILOS PROPIOS DE LA APLICACION (OPCIONAL)
+
+// @1 VARIABLES
+// -------------------------------------------------------------
+// Permiten configurar ciertos aspectos de nu-neo-styles.
+// Ver apartado Variables.
+$font-base-path: '../../../node_modules/nu-neo-styles/dist/fonts';
+
+// @2.1 COMPASS
+/// -------------------------------------------------------------
+@import '../../../node_modules/compass-mixins/lib/compass';
+
+// @3 NU-NEO-CORE STYLES
+// -------------------------------------------------------------
+@import '../../../node_modules/nu-neo-styles/dist/sass/base-neo';
+
+// @3.1 COMPONENTES NO INCLUIDOS (OPCIONAL)
+// -------------------------------------------------------------
+
+// @3.2 COMPONENTES y ELEMENTOS (OBLIGATORIO)
+// -------------------------------------------------------------
+@import '../../../node_modules/nu-neo-styles/dist/sass/partials/all';
+
+// @4 ESTILOS PROPIOS DE LA APLICACION
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// ! Don't remove following 2 lines and the move the order
+// Inyect scss from Bower with wiredep SCSS
+// bower:scss
+@import "../../../bower_components/atmira-ui-select/dist/atmiraSelect";
+// endbower
+// ! Don't remove following 2 lines and the move the order
+// Inyect scss from Bower
+// injectorBowerSCSS
+// endinjectorBowerSCSS
+// ! Don't remove following 2 lines and the move the order
+// Inyect scss from Components
+// injectorSCSS
+// endinjectorSCSS

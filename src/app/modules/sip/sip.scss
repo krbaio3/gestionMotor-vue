@@ -1,0 +1,55 @@
+.sip {
+	.view-locked {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 999;
+		display: block;
+		cursor: wait;
+	}
+	.error-popup {
+		position: absolute;
+    width: 40%;
+    z-index: 999;
+    border: red 3px solid;
+    background: white;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    border-radius: 7px;
+	}
+	.task-menubar {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		height: 50px;
+		width: 100%; 
+		.task-menubar-left-section {
+			background-color: #efefef;
+			height: 50px;
+			margin-top: 5px;
+			order: 1;
+			padding: 16px;
+			text-align: left; 
+		}
+		.task-menubar-right-section {
+			background-color: #efefef;
+			flex: 3;
+			height: 50px;
+			margin-top: 5px;
+			order: 2;
+			padding: 13px;
+			text-align: right; 
+		}
+		.task-menubar-option {
+			margin: 0 3px; 
+		}
+	}
+	
+	.task-container{
+		min-height: 500px;
+		.anchor-title{
+			height:17px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb-base",
+    // "rules": {
+    //      "linebreak-style": ["error", "windows"],
+    // },
+    "globals": {
+        "angular": true,
+        "window": true,
+        "document" : true
+    },
+    "plugins": [
+        "import",
+        "angular"
+    ]
+}

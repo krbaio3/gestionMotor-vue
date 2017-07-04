@@ -1,0 +1,87 @@
+{
+    "stateData": {
+        "viewId": "showSolicitarCancelacionDeCarteraGestionadaSBPMessage",
+        "availableTransitions": {
+            "aceptar": "/api/1.0/SBP/cartera/soliCancel/cartGest?_eventId=aceptar&execution=e2s1",
+            "abandonar": "/api/1.0/SBP/cartera/soliCancel/cartGest?_eventId=abandonar&execution=e2s1",
+            "end": "/api/1.0/SBP/cartera/soliCancel/cartGest?_eventId=end&execution=e2s1"
+        }
+    },
+    "data": {
+        "identificadorContrato": "038500000000002114",
+        "intervinientes": [{
+                "orden": 1,
+                "tipoDocumento": "1",
+                "descripcionTipoDocumento": "DNI",
+                "identificadorDocumento": "080083444C",
+                "nombre": "FICHA FISICA RESIDENT1",
+                "tipoRelacion": "850",
+                "descripcionTipoRelacion": "COPARTICIPE ",
+                "situacionRelacion": "900",
+                "fechaAlta": "2017-05-10"
+            },
+            {
+                "orden": 1,
+                "tipoDocumento": "1",
+                "descripcionTipoDocumento": "DNI",
+                "identificadorDocumento": "044523229J",
+                "nombre": "JAVIER GONZALEZ LLORCA",
+                "tipoRelacion": "850",
+                "descripcionTipoRelacion": "COPARTICIPE ",
+                "situacionRelacion": "900",
+                "fechaAlta": "2017-05-10"
+            }
+        ],
+        "indicadorMasOcurrencias": false,
+        "tipoDisponibilidad": "01",
+        "descripcionTipoDisponibilidad": "INDISTINTAMENTE",
+        "motivoCancelacion": "33",
+        "tipoCancelacion": "CL",
+        "expedienteTestamentaria": " ",
+        "fechaEntradaVigorContrato": "2017-05-11",
+        "fechaSolicitudCancelacion": "2017-05-23",
+        "medioPago": "IN",
+        "identificadorContratoDestino": "198000004653",
+        "saldoNetoContrato": {
+            "val": 47000.00,
+            "currency": {
+                "ad": "EUR",
+                "sd": "EUR",
+                "ld": "EURO",
+                "cod": "2811"
+            }
+        },
+        "importeComisionGestion": {
+            " val ": 2000.00,
+            "currency": {
+                "ad": "EUR",
+                "sd": "EUR",
+                "ld": "EURO",
+                "cod": "2811"
+            }
+        },
+        "importeComisionExito": {
+            " val ": 1000.00,
+            "currency": {
+                "ad": "EUR",
+                "sd": "EUR",
+                "ld": "EURO",
+                "cod": "2811"
+            }
+        },
+        "saldoConsolidadoContrato": {
+            "val": 50000.00,
+            "currency": {
+                "ad": "EUR",
+                "sd": "EUR",
+                "ld": "EURO",
+                "cod": "2811"
+            }
+        },
+        "fechaLimiteFirmaDocumentos": "2017-06-23",
+        "fechaEnvioComunicacionCliente": "2017-06-23",
+        "fechaPrevistaCancelacion": "2017-06-23",
+        "numeroOcurrencias": 2,
+        "mensajeError": ""
+    }
+}

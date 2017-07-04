@@ -1,0 +1,21 @@
+{
+  "name": "gestion-motor-vue",
+  "description": "Gestion motor desarrollado con Vuejs",
+  "main": "src/app/main.js",
+  "authors": [
+    "Jorge Carballo Alonso krbaio3@gmail.com"
+  ],
+  "license": "LICENCE.md",
+  "keywords": [
+    "gestion",
+    "motor"
+  ],
+  "homepage": "https://github.com/krbaio3/gestionMotor-vue",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

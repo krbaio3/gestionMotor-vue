@@ -1,0 +1,37 @@
+{
+  "name": "bankia-module-intervenents-economic-data",
+  "description": "modulo intervenentsEconomicData para cancelacion de carteras gestionasdas",
+  "main": "bankia-module-intervenents-economic-data.js, bankia-module-intervenents-economic-data.html, bankia-module-intervenents-economic-data.css",
+  "authors": [
+    "Atmira"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "intervenentsEconomicData",
+    "tarea"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0",
+    "angular": "~1.6.0",
+    "atmira-ui-select": "https://github.com/atmira-it/atmira-select.git#2.2.3",
+    "bankia-cl-ui-multiproduct": "https://aqdes-stash.cm.es/stash/scm/aiadd/cl-ui-multiproduct.git#1.0.1",
+    "bankia-ui-checkbox": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-checkbox.git#~2.0.1",
+    "bankia-ui-radio": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-radio.git",
+    "bankia-ui-decimal": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-decimal.git",
+    "moment": "^2.15.2"
+  },
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "resolutions": {
+    "jquery": "~2.1",
+    "angular": "~1.6.0",
+    "compass-mixins": "~0.12.6"
+  }
+}

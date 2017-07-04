@@ -1,0 +1,38 @@
+<div class="bk-box-context simulation-box"> 
+		<h2>SIMULACIÓN</h2>
+		<div class="form-group form-group-first output">
+          <strong>Saldo:</strong>
+          <span class="text-right w-125">{{vm.simulation.amount | bkDecimal : 2 : true}}</span>
+        </div>
+        <div class="form-group output no-title">
+			<strong> </strong>
+			<span class="w-40">EUR</span>
+        </div>
+		<div class="form-group form-group-first output">
+          <strong>Comisión fija:</strong>
+          <span class="text-right w-125">{{vm.simulation.commission | bkDecimal : 2 : true}}</span>
+        </div>
+        <div class="form-group output no-title">
+			<strong> </strong>
+			<span class="w-40">EUR</span>
+        </div>
+		<div class="form-group form-group-first output">
+          <strong>Neto:</strong>
+          <span class="text-right w-125">{{vm.simulation.net | bkDecimal : 2 : true}}</span>
+        </div>
+        <div class="form-group output no-title">
+			<strong> </strong>
+			<span class="w-40">EUR</span>
+        </div>
+		
+		<div class="simulation-row">
+			<div class="form-group form-group-first output">
+			  <strong>Comisión éxito:</strong>
+			  <span class="text-right w-125">{{vm.simulation.success | bkDecimal : 2 : true}}</span>
+			</div>
+			<div class="form-group output no-title">
+				<strong> </strong>
+				<span class="w-40">EUR</span>
+			</div>
+		</div>
+	</div>

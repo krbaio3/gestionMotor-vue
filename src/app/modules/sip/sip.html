@@ -1,0 +1,36 @@
+<div class="at-body sip">
+	<!-- @if ENV='local' -->
+	<div class="error-popup" ng-show="vm.error()">{{vm.error()}}</div>
+	<!-- @endif -->
+	<!-- STATUS CONTROL LAYERS -->
+	<div class="view-locked" ng-show="vm.status.viewLocked()"></div>
+	<div class="container-fixed" ng-show="!vm.status.loadingApp">
+		<!-- COMMON DATA-->
+		<div class="row clearfix">
+			<!--<at-common-data data="vm.commonData"></at-common-data>-->
+		</div>
+
+		<div class="row clearfix">
+			<!-- TASK LIST -->
+			<div class="col-1920-2">
+				<div class="bk-title-table">
+					<h1 class="title">Lista de tareas</h1>
+				</div>
+				<ul class="bk-legend">
+					<li>Obligatorio<span class="bk-required">*</span></li>
+					<li>Completo<span class="bki-completed-task"></span></li>
+					<li>Incompleto<span class="bki-uncompleted-task"></span></li>
+				</ul>
+			</div>
+			<div class="col-1920-8 grouper task-container">
+				<div class="anchor-title"></div>
+	            <div class="anchor-zone" bk-module-loader-anchor="DefaultAnchor"></div>
+	        </div>
+	        <!-- LOWER MENU BAR -->
+	        <div class="task-menubar" ng-show="!vm.status.loadingSip()">
+	          <div class="task-menubar-left-section" bk-task-menu-bar bk-type="left" bk-name="left-section"></div>
+	          <div class="task-menubar-right-section" bk-task-menu-bar bk-type="right" bk-name="right-section"></div>
+	        </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+{
+  "name": "bankia-module-impediments",
+  "description": "modulo impediments para tarea impedimentos gestion carteras gestionadas",
+  "main": "bankia-module-impediments.js, bankia-module-impediments.css, bankia-module-impediments.html",
+  "authors": [
+    "Atmmira"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "bankia-module-impediments",
+    "tarea",
+    "impediments",
+    "impedimentos"
+  ],
+  "dependencies": {
+    "atmira-ui-select": "https://github.com/atmira-it/atmira-select.git#2.2.3",
+    "bankia-ui-checkbox": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-checkbox.git#~2.0.1",
+    "bankia-ui-radio": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-radio.git#~2.0.3",
+    "bankia-ui-decimal": "https://aqdes-stash.cm.es/stash/scm/aiadd/ui-decimal.git#~0.0.7"
+  },
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "resolutions": {
+    "angular": ">=1.4 <2"
+  }
+}

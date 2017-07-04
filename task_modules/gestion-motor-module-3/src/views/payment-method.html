@@ -1,0 +1,21 @@
+<div class="bk-box-context payment-box" ng-init="payment=1;"> 
+		<h2>FORMA DE PAGO</h2>
+		<input type="radio" id="radio1" value="1" ng-model="payment" ng-checked="true" />
+		<label for="radio1">Reembolso a cuenta asociada</label><br/>
+		<input type="radio"  id="radio2" value="2" ng-model="payment" />
+		<label for="radio2">Movilización a otro fondo del cliente</label><br />
+		{{payment.method}}
+		<div class="method-box" ng-show="payment == 1">		
+			<span>Código cuenta cliente abono</span>
+			<input class="w-39 disabled" type="text" ng-model="test" placeholder="2038" disabled />
+			<input class="w-39 disabled" type="text" ng-model="test" placeholder="1000" disabled />
+			<input class="w-39 disabled" type="text" ng-model="test" placeholder="9976" disabled />
+			<input class="w-39 disabled" type="text" ng-model="test" placeholder="5555" disabled />
+			<input class="w-39 disabled" type="text" ng-model="test" placeholder="1239" disabled />
+		</div>
+		<div class="method-box" ng-show="payment == 2">		
+			<span>Fondo</span>
+			<input class="w-320 required" type="text" ng-model="test" placeholder="" />
+			<button ng-transclude="ng-transclude" bk-button="" type="button" ng-click="clickSearch()" ng-disabled="cpDisabled || searching || isLoading()" class="bk-with-icon bk-button"><span class="bki-search-ddbb ng-scope"></span><span class="sr-only ng-scope">Botón que abre el proceso de búsqueda de cliente.</span></button>
+		</div>
+	</div>	

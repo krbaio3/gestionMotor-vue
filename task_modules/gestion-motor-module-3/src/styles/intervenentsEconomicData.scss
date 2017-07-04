@@ -1,0 +1,71 @@
+.interveners-economic-data {
+    background-color: #f1f1f1;
+
+    .bk-table .scrollable-body {
+        min-height: 78px;
+        overflow-y: scroll;
+    }
+    .form-group {
+        display: inline-block;
+    }
+    .ib {
+        display: inline-block;
+    }
+    .ib span {
+        display: block!important;
+        line-height: 13px!important;
+        padding-bottom: 2px;
+    }
+    .interveners-links {
+        text-align: right
+    }
+    .bk-title-table .title {
+        font-size: 16px!important;
+        padding: 0;
+    }
+    input:disabled {
+        color: #666;
+    }
+    .button-right button {
+        margin-right: 5px;
+    }
+    .button-right {
+        margin-top: 13px;
+        border-top: 1px solid #ddd;
+        padding-top: 13px;
+        text-align: right;
+        margin-right: 32px;
+    }
+    .button-right a {
+        float: left;
+    }
+    .show-impediments {
+        display: none;
+    }
+    .w-17 {
+        width: 17px;
+    }
+    td.bki-success:before {
+        color: #c4d600;
+        font-size: 14px;
+        left: 17px;
+        position: absolute;
+        top: 5px;
+    }
+    #commonData {
+        padding: 8px 10px 1px;
+        .related-fields {
+            display: table;
+        }
+        .form-group {
+            margin-right: 15px;
+            &.output span {
+                padding: 4px 0 0 6px;
+                height: 26px;
+            }
+        }
+    }
+    .bk-table .table thead tr th {
+        padding: 7px 6px 6px;
+    }
+}
