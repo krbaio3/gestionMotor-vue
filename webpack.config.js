@@ -23,15 +23,7 @@ module.exports = {
     // ],
     vendor: [
       'jquery',
-      'angular',
-      'angular-sanitize',
-      'angular-ui-bootstrap',
-      'bankia-cl-ui-ccc',
-      'bankia-cl-ui-document',
-      'bankia-core-subprocesses',
-      'bankia-core-swl',
-      'bankia-neo-cl-ui-flows',
-      'bankia-neo-ui-dialog',
+      'vue',
     ],
   },
   output: {
