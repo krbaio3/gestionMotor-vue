@@ -1,13 +1,9 @@
 {
   "presets": [
-    "env",
-    "react",
-    "stage-0"
+    "env"
   ],
   "plugins": [
     "transform-class-properties",
-    "transform-decorators",
-    "transform-react-constant-elements",
-    "transform-react-inline-elements"
+    "transform-decorators"
   ]
 }

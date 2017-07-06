@@ -32,8 +32,9 @@
   "devDependencies": {
     "@types/node": "~8.0.7",
     "@types/vue-resource": "^0.9.31",
+    "awesome-typescript-loader": "last",
     "babel-core": "^6.25.0",
-    "babel-env": "^2.4.1",
+    "babel-preset-env": "^2.4.1",
     "babel-loader": "^7.1.1",
     "css-loader": "~0.28.4",
     "eslint": "~3.19.0",
