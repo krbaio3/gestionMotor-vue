@@ -1,14 +1,95 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js by sample</title>
+</head>
+
+<body>
     <div class="well">
-      <h1>Sample app</h1>
+        <h1>Sample app Vuejs</h1>
     </div>
-        <div id="root"></div>
-    </body>
+
+    <div class="directivas">
+        <img :src="imagen" alt="">
+        <div v-text="texto"></div>
+        <div v-html="textoHTML"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="ifElse">
+        <template v-if="mostrar">
+            Este es el primer div
+        </template>
+        <template v-else="!mostrar">
+            Este es el segundo div
+        </template>
+    </div>
+    <br>
+    <br>
+    <br>
+<div class="vFor">
+    <ul>
+        <template v-for="(dictador, index) of dictadores">
+            <li>{{index}} - {{dictador.nombre}} - {{dictador.pais}}</li>
+            <hr>
+        </template>
+    </ul>
+
+</div>
+    <br>
+    <br>
+    <br>
+
+    <div id="root">
+        <!-- <h3>{{ mostrarMensaje() }}</h3> -->
+        <h3>{{message}}</h3>
+        <button v-on:click="message= 'ESTO ES LO NUEVO'">Change Message</button>
+        <button v-on:click="destroy">Destroy</button>
+    </div>
+    <br>
+    <br>
+    <div id="vm">
+        <button v-on:click="primero++" class="btn btn-info">Incrementar el primero</button>
+        <button v-on:click="segundo++" class="btn btn-info">Incrementar el segundo</button>
+        <button v-on:click="tercero++" class="btn btn-info">Incrementar el tercero</button>
+        <button v-on:click="cuarto++" class="btn btn-info">Incrementar el cuarto</button>
+        <p>Primero: {{primero}}</p>
+        <p>Segundo: {{segundo}}</p>
+        <p>Tercero: {{tercero}}</p>
+        <p>Cuarto: {{cuarto}}</p>
+        <p>Total: {{total}}</p>
+    </div>
+    <br>
+    <br>
+    <div id="input">
+        <span>Hola {{nombre}}, soy un ejemplo de Vue2</span>
+        <input type="text" v-on:keyup="alert($event)" v-model="nombre">
+    </div>
+
+    <br>
+    <br>
+
+    <div id="pruebaDirectivas">
+        <input type="text" v-model="nombre" />
+        <span>{{nombre}}</span>
+        <p v-if="nombre != ''">
+            Estas escribiendo algo
+        </p>
+        <p v-else>
+            Esta vacio
+        </p>
+        <p v-show="nombre == 'Jorge'">
+            Te llamas como yo!
+        </p>
+
+        <button v-on:click="this.window.alert('wwwww');" class="btn btn-success"> prueba window btn</button>
+        <button v-on:click="prueba" class="btn btn-success"> prueba window function</button>
+    </div>
+
+</body>
+
 </html>
