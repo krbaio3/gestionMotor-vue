@@ -1,0 +1,42 @@
+.impediments-box {
+    display: inline-block;
+    width: 1260px!important;
+    padding-right: 10px;
+}
+
+
+.impediments-links {
+    text-align: right
+}
+
+.impediments-buttons {
+    margin-top: 7px;
+    margin-bottom: 11px;
+}
+
+.scrollable-body {
+    background-color: #f1f1f1!important;
+}
+
+.bk-buttonbar {
+    display: inline-block;
+}
+
+.modal-dialog .bk-buttonbar {
+    width: 100%;
+}
+
+.impediments-buttons input[type=checkbox] {
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+}
+
+.bk-required {
+    background-color: #ffcc01;
+    color: #017a99;
+    font-size: 14px;
+}
+
+.impediments-buttons .bk-with-icon {
+    margin-right: 20px;
+}
