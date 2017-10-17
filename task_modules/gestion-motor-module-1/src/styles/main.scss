@@ -1,17 +1,15 @@
 // @1 VARIABLES
 // @2 TERCEROS
 // 	  @2.1 COMPASS (OBLIGATORIO)
-// @3 NU-NEO-CORE STYLES (OBLIGATORIO)
+// @3 CORE STYLES (OBLIGATORIO)
 //    @3.1 COMPONENTES NO INCLUIDOS (OPCIONAL)
 //    @3.2 COMPONENTES y ELEMENTOS (OBLIGATORIO)
 // @4 ESTILOS PROPIOS DE LA APLICACION (OPCIONAL)
 
 // @1 VARIABLES
 // -------------------------------------------------------------
-// Permiten configurar ciertos aspectos de nu-neo-styles.
+// Permiten configurar ciertos aspectos de Styles.
 // Ver apartado Variables.
-$font-base-path: '../../node_modules/nu-neo-styles/dist/fonts';
-
 // @2 TERCEROS
 // -------------------------------------------------------------
 
@@ -19,16 +17,16 @@ $font-base-path: '../../node_modules/nu-neo-styles/dist/fonts';
 /// -------------------------------------------------------------
 @import '../../node_modules/compass-mixins/lib/compass';
 
-// @3 NU-NEO-CORE STYLES
+// @3 CORE STYLES
 // -------------------------------------------------------------
-@import '../../node_modules/nu-neo-styles/dist/sass/base-neo';
+@import '../../node_modules/core-styles/dist/sass/base-gm';
 
 // @3.1 COMPONENTES NO INCLUIDOS (OPCIONAL)
 // -------------------------------------------------------------
 
 // @3.2 COMPONENTES y ELEMENTOS (OBLIGATORIO)
 // -------------------------------------------------------------
-@import '../../node_modules/nu-neo-styles/dist/sass/partials/all';
+@import '../../node_modules/core-styles/dist/sass/partials/all';
 
 // @4 ESTILOS PROPIOS DE LA APLICACION
 // -------------------------------------------------------------
@@ -85,13 +83,12 @@ body {
 	.uppercase {text-transform: uppercase;}
 }
 
-// Estilos para asemejar los nu-neo-styles al aspecto que le dan en las maquetas
-#gaccancela {
+#prueba {
 	th {
 		font-weight: normal;
 	}
 	input.ng-invalid {
-		background-color: $brand-primary$neo-text-input-required-background-color;
+		background-color: $core-input-required-background-color;
 	}
 	input[type="text"] {
 		border: 1px solid #dadada;
@@ -101,18 +98,6 @@ body {
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		display: inline-block;
-	}
-	.bk-box {
-		border-radius: 0;
-		border-color: #cacaca;
-	}
-	.bk-box-with-title .bk-title-table .title {
-		padding: 0 0 9px;
-	}
-	.bk-footerbar {
-		background-color: #ecebeb;
-		border-top: 1px solid $neo-border-color;
-		padding: 8px;
 	}
 	.form-group {
 		margin-right: 15px;
@@ -125,11 +110,6 @@ body {
 			width: auto;
 		}
 	}
-	.bk-form {
-		.form-group {
-			display: inline-block;
-		}
-	}
 	//Fix nu-neo-style + at-select
 	at-select {
 		.dropdown-display span {
@@ -138,25 +118,8 @@ body {
 			margin: 0px;
 			min-height: 20px!important;
 		}
-		span.bki-unfold-down {
-			padding: 0;
-			margin: 0;
-			border: 0;
-			display: block;
-			text-align: center;
-			top: 3px;
-		}
 	}
 	//fix radio buttons con bk-form
-	.bk-radio .presentation {
-		[class^="bki-fold"] {
-			line-height: 1px;
-		}
-		.bki-fold-stroke {
-			height: 15px;
-			bottom: 0;
-		}
-	}
 }
 
 // =================== width =================== //

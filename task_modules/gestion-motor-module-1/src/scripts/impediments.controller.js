@@ -1,10 +1,9 @@
 class ImpedimentsController {
 
-  constructor(IntervenentsEconomicDataService, neodialog, $sce) {
+  constructor(IntervenentsEconomicDataService, $sce) {
     'ngInject';
 
     // console.log(DialogSrv);
-    this.neodialog = neodialog;
     this.intervenentsEconomicDataService = IntervenentsEconomicDataService;
     this.$sce = $sce;
     this.impedimentsList = this.intervenentsEconomicDataService.getImpedimentsList();
@@ -23,7 +22,7 @@ class ImpedimentsController {
 
   showHtml() {
     if (this.isChecked === true) {
-      const dialog = this.neodialog.show({
+      const dialog = this.modal.show({
         html: this.$sce.trustAsHtml('<h2>El cliente se ha personado en la oficina</h2>No será necesario esperar al vencimiento del plazo de preaviso al cliente para resolver los impedimentos y cancelar el contrato.<br/><br/>Se deberá recoger la firma del cliente en la tarea de Documentación y firma.<br/><br/>¿Confirmas que el cliente se ha personado en la oficina?'),
         type: 'alert',
         buttons: ['+Aceptar', '-Cancelar'],

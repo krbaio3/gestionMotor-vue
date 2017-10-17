@@ -1,7 +1,7 @@
 {
-  "name": "bankia-module-impediments",
+  "name": "gm-module-impediments",
   "version": "0.0.0",
-  "description": "modulo impediments para tarea impedimentos gestion carteras gestionadas",
+  "description": "modulo impediments gm",
   "main": "impediments.module.js",
   "scripts": {
     "build": "npm run clean && webpack --config webpack.develop.config.js",
@@ -11,13 +11,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "bankia-module-impediments",
+    "gm-module-impediments",
     "tarea",
     "impediments",
     "impedimentos"
   ],
-  "author": "Atmmira",
-  "license": "ISC",
+  "author": "KrBaIO3 <krbaio3@gmail.com>",
+  "license": "See LICENSE.md",
   "dependencies": {
     "angular": "~1.6.4",
     "angular-animate": "^1.6.4",
@@ -25,15 +25,7 @@
     "angular-ui-bootstrap": "~2.5.0",
     "babel-preset-es2015": "^6.24.1",
     "compass-mixins": "~0.12.10",
-    "bankia-cl-ui-ccc": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/cl-ui-ccc.git",
-    "bankia-cl-ui-document": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/cl-ui-document.git",
-    "bankia-core-subprocesses": "git+https://aqdes-stash.cm.es/stash/scm/aicli/core-subprocesses.git",
-    "bankia-core-swl": "git+https://aqdes-stash.cm.es/stash/scm/aicli/core-swl.git",
-    "bankia-neo-cl-ui-flows": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/neo-cl-ui-flows.git",
-    "bankia-neo-ui-dialog": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/neo-ui-dialog.git",
-    "bankia-ui-checkbox": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/ui-checkbox.git",
-    "bankia-ui-radio": "git+https://aqdes-stash.cm.es/stash/scm/aiadd/ui-radio.git",
-    "nu-neo-styles": "git+https://aqdes-stash.cm.es/stash/scm/orgux/nu-neo-styles.git"
+    "core-styles": "0.0.1"
   },
   "devDependencies": {
     "@types/angular": "~1.6.18",
