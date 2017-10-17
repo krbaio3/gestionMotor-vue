@@ -17,6 +17,7 @@ module.exports = {
     app: './main.ts',
     vendor: [
       'vue',
+      'jquery'
     ],
     vendorStyles: [
       '../node_modules/bootstrap/dist/css/bootstrap.css',
