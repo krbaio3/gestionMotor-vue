@@ -4,10 +4,12 @@ import Vue from 'vue';
 //   message: string;
 // }
 
+require('./styles.css');
+
 export const App = new Vue({
   el: '#root',
   data: {
-    // title: 'Lista de Tareas',
+    title: 'Lista de Tareas',
     tareas: [
       {
         texto: 'Aprender Vue.js',
@@ -35,6 +37,12 @@ export const App = new Vue({
           terminada: false });
       }
       this.nuevaTarea = '';
+    },
+    eliminarTarea: function(index){
+      console.log(index);
+      this.tareas.splice(index, 1);
+      console.log(this.tareas);
+      
     }
   }
 });
