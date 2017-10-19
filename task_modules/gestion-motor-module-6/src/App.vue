@@ -7,12 +7,16 @@
 </template>
 
 <script>
+import Titulo from './TituloComponent.vue';
 export default {
+  components:{
+    Titulo,
+  },
   data() {
     return {
       titulo: 'Lista de Tareas'
     }
-  }
+  },
 }
 </script>
 
