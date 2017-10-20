@@ -29,13 +29,13 @@ export default {
                 });
                 // this.$emit('incrementCount', 1);
                 // this.actualizarContador();
-                bus.$emit('actualizarContador', this.tareas.length);
+                bus.actualizarContador(this.tareas.length);
             }
             this.nuevaTarea = '';
         },
     },
     created () {
-            bus.$emit('actualizarContador', this.tareas.length);
+            bus.actualizarContador(this.tareas.length);
     },
 };
 </script>
