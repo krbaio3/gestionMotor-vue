@@ -2,8 +2,8 @@
   <div id="app" class="container">
     <div class="jumbotron">
       <titulo :titulo="titulo"></titulo>
-      <nueva-tarea :tareas="tareas" 
-          v-on:incrementCount="numTareas +=$event"></nueva-tarea>    
+      <!-- <nueva-tarea :tareas="tareas" v-on:incrementCount="numTareas +=$event"></nueva-tarea> -->
+      <nueva-tarea :tareas="tareas" :actualizarContador="actualizarContador"></nueva-tarea>
       <lista-tareas :tareas="tareas"></lista-tareas>
       <span>Numero de Tareas: {{numTareas}}</span>
     </div>
@@ -42,6 +42,11 @@ export default {
       // ]
       tareas:tareasVue
     };
+  },
+  methods: {
+    actualizarContador(numero) {
+      this.numTareas++;
+    }
   }
 };
 </script>
