@@ -9,6 +9,8 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-beta",
+    "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git",
     "vue": "^2.4.4"
   },
   "devDependencies": {
