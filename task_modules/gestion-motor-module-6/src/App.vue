@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="container">
     <div class="jumbotron">
-      <titulo :titulo="titulo"></titulo>
+      <titulo :titulo="titulo" :subTitulo="subTitulo" :numTareas="numTareas"></titulo>
       <!-- <nueva-tarea :tareas="tareas" v-on:incrementCount="numTareas +=$event"></nueva-tarea> -->
       <nueva-tarea :tareas="tareas" :actualizarContador="actualizarContador"></nueva-tarea>
       <lista-tareas :tareas="tareas"></lista-tareas>
-      <span>Numero de Tareas: {{numTareas}}</span>
+      <!-- <span>Numero de Tareas: {{numTareas}}</span> -->
     </div>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       titulo: '* Lista de Tareas *',
+      subTitulo:'Tareas a hacer:',
       numTareas: 3,
       // tareas: [
       //   {

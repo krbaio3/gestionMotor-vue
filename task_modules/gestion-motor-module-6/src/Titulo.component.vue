@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>{{tituloMayusculas()}}</h2>
-  <h4>Tareas a hacer:</h4>
+  <h4>{{subTitulo}}<span class="ml-1">{{numTareas}}</span></h4>
   </div>
 </template>
 <script>
@@ -11,7 +11,12 @@ export default {
       type: String,
       default: 'Escribe un titulo',
       required: true,
-    }
+    },
+    subTitulo: {
+      type: String,
+      required: false,
+    },
+    numTareas:{},
   },
   methods: {
     tituloMayusculas(){
