@@ -5,8 +5,12 @@
   </div>
 </template>
 <script>
+import {bus} from './main.js';
+
 export default {
-  props: {
+  props: 
+  // ['titulo','subTitulo'], 
+  {
     titulo: {
       type: String,
       default: 'Escribe un titulo',
@@ -16,13 +20,26 @@ export default {
       type: String,
       required: false,
     },
-    numTareas:{},
+    // numTareas:{
+    //   type: Number,
+    //   default: 0,
+    // },
+  },
+  data (){
+    return {
+      numTareas: 0
+    };
   },
   methods: {
     tituloMayusculas(){
       if(typeof this.titulo == 'string')
         return this.titulo.toUpperCase();
-    }
-  }
+    },
+  },
+  created () {
+    bus.$on('actualizarContador', (numTareas) => {
+      this.numTareas = numTareas;
+    });
+  },
 };
 </script>

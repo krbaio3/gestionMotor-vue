@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="jumbotron">
-      <titulo :titulo="titulo" :subTitulo="subTitulo" :numTareas="numTareas"></titulo>
+      <titulo :titulo="titulo" :subTitulo="subTitulo"></titulo>
       <!-- <nueva-tarea :tareas="tareas" v-on:incrementCount="numTareas +=$event"></nueva-tarea> -->
       <nueva-tarea :tareas="tareas" :actualizarContador="actualizarContador"></nueva-tarea>
       <lista-tareas :tareas="tareas"></lista-tareas>
@@ -26,7 +26,6 @@ export default {
     return {
       titulo: '* Lista de Tareas *',
       subTitulo:'Tareas a hacer:',
-      numTareas: 3,
       // tareas: [
       //   {
       //     texto: 'Aprender Vue.js',
