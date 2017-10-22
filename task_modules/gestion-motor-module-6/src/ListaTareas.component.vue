@@ -10,13 +10,15 @@
             </span>
             <span class="pull-right">
                 <button type="button" 
-                class="btn btn-danger btn-sm fa fa-times"
+                class="btn btn-danger btn-sm fa fa-times w-34"
                 @click="eliminarTarea(index)"/>
         </span>
         </li>
     </ul>
 </template>
 <script>
+import {bus} from './main.js';
+
 export default {
   props: ['tareas'],
   methods: {
@@ -24,8 +26,14 @@ export default {
         console.log(index);
         this.tareas.splice(index, 1);
         console.log(this.tareas);
+        bus.actualizarContador(this.tareas.length);
     }
-  }
+  },
+  updated () {
+    bus.$on('actualizarContador', (numTareas) => {
+      this.numTareas = numTareas;
+    });  
+  },
 };
 </script>
 
@@ -39,7 +47,6 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
     // text-decoration: line-through !important;
     text-decoration: line-through;
 }
-
 .ml-1 {
     margin-left: 1rem;
 }
