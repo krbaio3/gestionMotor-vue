@@ -1,7 +1,36 @@
 <template>
   <div class="container">
     <div class="jumbotron">
-      <mostrarFormulario></mostrarFormulario>
+      <!-- <mostrarFormulario :titulo="titulo"> -->
+      <mostrarFormulario>
+        <div slot="titulo">
+          <h3>{{titulo}}</h3>
+        </div>
+        <div slot="elementos">
+          <div class="form-group">
+          <label for="correo">Correo Electronico</label>
+          <input type="email" 
+                  name="" 
+                  id="correo" 
+                  class="form-control"
+                  placeholder="Escribe tu Correo electronico">
+          </div>
+        
+          <div class="form-group">
+            <label for="clave">Password</label>
+            <input type="password" 
+                    name="" 
+                    id="clave" 
+                    class="form-control" 
+                    placeholder="Escribe el Pass" 
+                    aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+          </div>
+        </div>
+        <div slot="boton">
+          <button class="btn btn-primary">Iniciar Sesion</button> 
+        </div>
+      </mostrarFormulario>
     </div>
   </div>
 </template>
@@ -11,11 +40,18 @@ export default {
   components: {
     mostrarFormulario : MostrarFormulario
   },
-  data() {}
+  data() {
+    return {
+      titulo: 'Cambiar Password',
+    }
+  }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../node_modules/bootstrap/scss/bootstrap';
 
+h3 {
+  color: blue;
+}
 </style>
