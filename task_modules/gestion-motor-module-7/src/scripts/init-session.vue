@@ -45,6 +45,15 @@ export default {
     return {
       titulo: 'Iniciar Sesion',
     }
+  },
+  destroyed () {
+    console.log('El componente ha sido destruido');
+  },
+  activated () {
+    console.log('El componente ha sido activado');
+  },
+  deactivated () {
+    console.log('El componente ha sido desactivado');
   }
 };
 </script>

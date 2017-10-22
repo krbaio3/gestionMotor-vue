@@ -5,7 +5,9 @@
               @click="componenteSeleccionado = 'iniciarSesion'">IniciarSesion</button>
       <button class="btn btn-primary" 
               @click="componenteSeleccionado = 'cambiarClave'">Cambiar Clave</button>
-      <component :is="componenteSeleccionado"></component>
+      <keep-alive>
+        <component :is="componenteSeleccionado"></component>
+      </keep-alive>
     </div>
   </div>
 </template>
