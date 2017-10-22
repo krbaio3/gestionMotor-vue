@@ -1,6 +1,5 @@
 <template>
     <form action="" class="form">
-        <!-- <h3>{{titulo}}</h3> -->
         <slot name="titulo"></slot>
         <slot name="elementos"></slot>
         <slot name="boton"></slot>
@@ -16,5 +15,4 @@ export default {
 h3{
     color: greenyellow;
 }
-
 </style>

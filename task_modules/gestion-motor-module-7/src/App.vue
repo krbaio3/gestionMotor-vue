@@ -1,48 +1,28 @@
 <template>
   <div class="container">
     <div class="jumbotron">
-      <!-- <mostrarFormulario :titulo="titulo"> -->
-      <mostrarFormulario>
-        <div slot="titulo">
-          <h3>{{titulo}}</h3>
-        </div>
-        <div slot="elementos">
-          <div class="form-group">
-          <label for="correo">Correo Electronico</label>
-          <input type="email" 
-                  name="" 
-                  id="correo" 
-                  class="form-control"
-                  placeholder="Escribe tu Correo electronico">
-          </div>
-        
-          <div class="form-group">
-            <label for="clave">Password</label>
-            <input type="password" 
-                    name="" 
-                    id="clave" 
-                    class="form-control" 
-                    placeholder="Escribe el Pass" 
-                    aria-describedby="helpId">
-            <small id="helpId" class="text-muted">Help text</small>
-          </div>
-        </div>
-        <div slot="boton">
-          <button class="btn btn-primary">Iniciar Sesion</button> 
-        </div>
-      </mostrarFormulario>
+      <button class="btn btn-primary" 
+              @click="componenteSeleccionado = 'iniciarSesion'">IniciarSesion</button>
+      <button class="btn btn-primary" 
+              @click="componenteSeleccionado = 'cambiarClave'">Cambiar Clave</button>
+      <component :is="componenteSeleccionado"></component>
     </div>
   </div>
 </template>
 <script>
-import MostrarFormulario from './scripts/mostrarFormulario.vue'
+import MostrarFormulario from './scripts/mostrar-formulario.vue';
+import IniciarSesion from './scripts/init-session.vue';
+import CambiarClave from './scripts/change-password.vue'; 
+
 export default {
   components: {
-    mostrarFormulario : MostrarFormulario
+    mostrarFormulario : MostrarFormulario,
+    iniciarSesion : IniciarSesion,
+    cambiarClave : CambiarClave,
   },
   data() {
     return {
-      titulo: 'Cambiar Password',
+      componenteSeleccionado: 'iniciarSesion'
     }
   }
 };
