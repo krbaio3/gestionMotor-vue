@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="jumbotron">
-      <span class="display-3" v-decorar:peque.italica.negrilla="'helvetica'">Aprende Vue2 fácilmente</span>
+      <span class="display-3" v-decorar:peque.italica.negrilla="{tipoLetra: 'helvetica', color: 'blue'}">Aprende Vue2 fácilmente</span>
     </div>
   </div>
 </template>

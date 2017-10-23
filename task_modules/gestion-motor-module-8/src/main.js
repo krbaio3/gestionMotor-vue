@@ -3,7 +3,8 @@ import App from './App.vue'
 
 Vue.directive('decorar', {
     bind(el, binding, vnode) {
-      el.style.fontFamily = binding.value;
+      el.style.fontFamily = binding.value.tipoLetra;
+      el.style.color = binding.value.color;
       if(binding.arg === 'grande'){
         el.style.fontSize = '50px';
       }
