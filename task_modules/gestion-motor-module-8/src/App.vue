@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import { Usuario } from './scripts/usuario.object.js';
 export default {
   data(){
     return{
@@ -100,6 +101,7 @@ export default {
         genero: 'hombre',
         condiciones: []
       },
+      // usuario:Usuario,
       mostrar : false,
       paises : ['Argentina','Bolivia','Brasil','Chile','Colombia','Ecuador','España','Mexico','Paraguay','Uruguay','Venezuela'],
     }
