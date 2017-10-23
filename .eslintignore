@@ -1,2 +1,2 @@
-bundle.js
-dist/
+build/*.js
+config/*.js

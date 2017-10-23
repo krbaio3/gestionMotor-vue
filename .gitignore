@@ -38,11 +38,6 @@ jspm_packages
 
 # Node Modules Folder
 node_modules/
-
-# Bower Components
-bower_components/
-
-# Dist folder
 dist/
 .dist/
 
