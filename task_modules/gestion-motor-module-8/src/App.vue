@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="jumbotron">
-      <span class="display-3" v-decorar="'helvetica'">Aprende Vue2 fácilmente</span>
+      <span class="display-3" v-decorar.italica ="'helvetica'">Aprende Vue2 fácilmente</span>
     </div>
   </div>
 </template>
