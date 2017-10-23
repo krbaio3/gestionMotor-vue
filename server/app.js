@@ -4,8 +4,8 @@ const app = express();
 const port = 9004;
 const routes = {
   soliCancel: {
-    url: '/api/1.0/SBP/cartera/soliCancel/cartGest',
-    file: './api/Solicitarcancelacion.mock.json',
+    url: '/api/1.0/xxx/yyyyy/soliCancel/ffff',
+    file: './api/solicitar.mock.json',
   },
 };
 
