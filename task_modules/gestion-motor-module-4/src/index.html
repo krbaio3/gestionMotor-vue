@@ -1,0 +1,43 @@
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js by sample</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="root" class="jumbotron">
+            <h2>{{title}}</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Escribe la nueva tarea" v-model="nuevaTarea" class="form-control" v-on:keyup.enter="addTarea(nuevaTarea)"/>
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary" v-on:click="addTarea(nuevaTarea)">Add Tarea</button>
+                    </span>
+            </div>
+            <ul class="list-group">
+                <li v-for="(tarea, index) in tareas" class="list-group-item" v-bind:class="{terminada: tarea.terminada}">
+                    <span>{{tarea.texto}}</span>
+                    <span class="pull-right">
+                        <button type="button" 
+                        class="btn btn-xs glyphicon glyphicon-ok"
+                        v-bind:class="{'btn-success': tarea.terminada==false, 'btn-secondary': tarea.terminada==true}"
+                        @click="tarea.terminada = !tarea.terminada"/>    
+                    </span>
+                    <span class="pull-right">
+                        <button type="button" 
+                        class="btn btn-danger btn-xs glyphicon glyphicon-remove"
+                        @click="eliminarTarea(index)"/>
+                </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

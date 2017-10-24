@@ -1,0 +1,11 @@
+{
+  "name": "gm-module-manager-document",
+  "version": "0.0.0",
+  "description": "Modulo para gm",
+  "main": "gm-module-manager-document.js, gm-module-manager-document.html, gm-module-manager-document.css",
+  "author": "KrBaIO3 <krbaio3@gmail.com>",
+  "license": "See LICENSE.md",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
