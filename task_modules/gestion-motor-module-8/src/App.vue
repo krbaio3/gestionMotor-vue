@@ -101,7 +101,6 @@ export default {
         genero: 'hombre',
         condiciones: []
       },
-      // usuario:Usuario,
       mostrar : false,
       paises : ['Argentina','Bolivia','Brasil','Chile','Colombia','Ecuador','España','Mexico','Paraguay','Uruguay','Venezuela'],
     }
@@ -109,7 +108,7 @@ export default {
   methods:{
     enviarFormulario(){
       this.mostrar = true
-    }
+    },
   }
 }
 </script>
