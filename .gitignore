@@ -17,6 +17,11 @@ coverage
 # nyc test coverage
 .nyc_output
 
+# testing
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -51,6 +56,12 @@ tmp/
 
 # Log NPM
 npm-debug*.log
+npm-debug.log*
+
+# Log Yarn
+yarn-debug*.log*
+yarn-debug.log*
+yarn-error*.log*
 
 # Compressor Files
 zip
