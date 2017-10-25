@@ -30,6 +30,13 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(woff|woff2|eot|ttf)/,
+        loader: 'file-loader',
+        options: {
+          name: './fonts/[name].[ext]?[hash]'
+        }
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
