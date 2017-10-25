@@ -4,6 +4,12 @@
       <span>{{ mensaje | mayusculas }}</span>
       <hr>
       <span>{{mensaje}}</span>
+      <br>
+      <hr>
+      <br>
+      <span>{{ mensaje | mayusculas | suspensivos }}</span>
+      <hr>
+      <span>{{mensaje}}</span>
     </div>
   </div>
 </template>
