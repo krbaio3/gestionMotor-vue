@@ -47,6 +47,25 @@ export default {
     actualizarContador(numero) {
       this.numTareas++;
     }
+  },
+  created(){
+    this.$http
+        .get('https://gm-vue.firebaseio.com/tarea.json')
+        .then(
+          response => {
+            return response.json();
+          },
+          error => {
+            console.error(error);
+          }
+        )
+        .then(responseJson => {
+            console.log(responseJson);
+            for(let id in responseJson){
+              this.tareas.push(responseJson[id]);
+              console.log(id);
+            }
+        });
   }
 };
 </script>
