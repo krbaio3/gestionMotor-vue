@@ -18,33 +18,24 @@ export default {
   props: ["tareas", "actualizarContador"],
   methods: {
     addTarea: function(input) {
-      // this.nuevaTarea = input;
-      // console.log(this.nuevaTarea);
-      // this.tareas.push(this.nuevaTare);
-      // console.log(this.tareas);
       if (this.nuevaTarea.trim()) {
-        this.tareas.push({
+        let tarea = {
           texto: this.nuevaTarea.trim(),
           terminada: false
-        });
-        // this.$emit('incrementCount', 1);
-        // this.actualizarContador();
-        bus.actualizarContador(this.tareas.length);
-      }
-      this.$http
-        .post("https://gm-vue.firebaseio.com/tarea.json", {
-          texto: this.nuevaTarea.trim(),
-          terminada: false
-        })
-        .then(
+        };
+        this.$http.post("tarea.json", tarea).then(
           response => {
             console.log(response);
+            tarea.id = response.body.name;
+            this.tareas.push(tarea);
+            bus.actualizarContador(this.tareas.length);
             this.nuevaTarea = "";
           },
           error => {
             console.error(error);
           }
         );
+      }
     }
   },
   created() {

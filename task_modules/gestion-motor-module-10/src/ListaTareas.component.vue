@@ -3,13 +3,14 @@
         <li v-for="(tarea, index) in tareas" class="list-group-item" v-bind:class="{terminada: tarea.terminada}">
             <span>{{tarea.texto}}</span>
             <span class="pull-right">
-                <button type="button" 
+                <button type="button"
                 class="btn btn-sm fa fa-check  ml-1"
                 v-bind:class="{'btn-success': tarea.terminada==false, 'btn-secondary': tarea.terminada==true}"
-                v-on:click="tarea.terminada = !tarea.terminada"/>    
+                v-on:click="estado(index)"/>
+                <!-- v-on:click="tarea.terminada = !tarea.terminada"     -->
             </span>
             <span class="pull-right">
-                <button type="button" 
+                <button type="button"
                 class="btn btn-danger btn-sm fa fa-times w-34"
                 @click="eliminarTarea(index)"/>
         </span>
@@ -22,17 +23,33 @@ import {bus} from './main.js';
 export default {
   props: ['tareas'],
   methods: {
+    estado (indice) {
+      let terminada = this.tareas[indice].terminada = !this.tareas[indice].terminada;
+      let id = this.tareas[indice].id;
+
+      console.log(id);
+
+      this.$http.patch('tarea/' + id + '.json', {
+          terminada,
+      }).then(response => {
+        console.log(response);
+      });
+    },
     eliminarTarea: function (index) {
-        console.log(index);
-        this.tareas.splice(index, 1);
-        console.log(this.tareas);
-        bus.actualizarContador(this.tareas.length);
+      let id = this.tareas[index].id;
+      this.tareas.splice(index, 1);
+      console.log(index);
+      console.log(this.tareas);
+      this.$http.delete('tarea/' + id + '.json').then(response => {
+        console.log(response);
+      });
+      bus.actualizarContador(this.tareas.length);
     }
   },
   updated () {
     bus.$on('actualizarContador', (numTareas) => {
       this.numTareas = numTareas;
-    });  
+    });
   },
 };
 </script>

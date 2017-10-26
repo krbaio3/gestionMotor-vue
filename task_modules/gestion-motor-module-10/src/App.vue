@@ -26,21 +26,7 @@ export default {
     return {
       titulo: '* Lista de Tareas *',
       subTitulo:'Tareas a hacer:',
-      // tareas: [
-      //   {
-      //     texto: 'Aprender Vue.js',
-      //     terminada: false
-      //   },
-      //   {
-      //     texto: 'Aprender React',
-      //     terminada: false
-      //   },
-      //   {
-      //     texto: 'Aprender NodeJS',
-      //     terminada: false
-      //   }
-      // ]
-      tareas:tareasVue
+      tareas: [],
     };
   },
   methods: {
@@ -50,7 +36,7 @@ export default {
   },
   created(){
     this.$http
-        .get('https://gm-vue.firebaseio.com/tarea.json')
+        .get('tarea.json')
         .then(
           response => {
             return response.json();
@@ -62,9 +48,16 @@ export default {
         .then(responseJson => {
             console.log(responseJson);
             for(let id in responseJson){
-              this.tareas.push(responseJson[id]);
+              let tarea = {
+                id,
+                texto: responseJson[id].texto,
+                terminada: responseJson[id].terminada
+              };
+              this.tareas.push(tarea);
               console.log(id);
             }
+        }, error => {
+              console.error(error);
         });
   }
 };

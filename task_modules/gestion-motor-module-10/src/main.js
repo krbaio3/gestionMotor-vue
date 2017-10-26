@@ -11,6 +11,9 @@ export const bus = new Vue({
 });
 
 Vue.use(VueResource);
+Vue.config.devtools = true
+
+Vue.http.options.root = 'https://gm-vue.firebaseio.com';
 
 new Vue({
   el: '#app',
