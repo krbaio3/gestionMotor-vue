@@ -4,10 +4,10 @@
       <h3><strong>Aplicacion Usuarios</strong></h3>
         <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
+          <router-link class="nav-link" to='/'>Inicio</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Usuarios</a>
+          <router-link class="nav-link" to  ='/usuarios'>Usuarios</router-link>
         </li>
       </ul>
     </nav>
