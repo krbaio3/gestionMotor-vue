@@ -2,19 +2,18 @@
   <div class="container">
       <encabezado></encabezado>
     <div class="jumbotron">
+      <router-view></router-view>
     </div>
   </div>
 </template>
-
 <script>
-import encabezado from './components/encabezado.component.vue';
+import encabezado from "./components/encabezado.component.vue";
 export default {
   components: {
-    encabezado:encabezado,
+    encabezado: encabezado
   }
 };
 </script>
-
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap";
 </style>
