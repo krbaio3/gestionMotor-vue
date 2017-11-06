@@ -11,6 +11,8 @@
   "dependencies": {
     "bootstrap": "4.0.0-beta",
     "bootstrap-vue": "^1.0.0-beta.9",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.6",
     "vue": "^2.4.4",
     "vue-resource": "^1.3.4",
     "vue-router": "^3.0.1"
