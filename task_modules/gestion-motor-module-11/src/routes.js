@@ -6,4 +6,6 @@ export const rutas = [
   {path:'', component:InicioComponent},
   {path:'/usuarios', component:UsuariosComponent, name: 'usuarios'},
   {path: ':id', component: InfoUsuarioComponent, name:'infoUsuario'},
+  {path: '/users', redirect: '/usuarios'},
+  {path: '*', redirect: '/'},
 ];
