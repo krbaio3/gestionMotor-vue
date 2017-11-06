@@ -11,19 +11,31 @@
 export default {
   data() {
     return {
-      nombre: '',
-      email:''
+      nombre: "",
+      email: ""
     };
   },
+  methods: {
+    _callToUser() {
+      let id = this.$route.params.id;
+      this.$http
+        .get("https://jsonplaceholder.typicode.com/users/" + id)
+        .then(response => {
+          return response.json();
+        })
+        .then(user => {
+          this.nombre = user.name;
+          this.email = user.email;
+        });
+    }
+  },
+  watch: {
+    $route() {
+      this._callToUser();
+    }
+  },
   created() {
-    let id = this.$route.params.id;
-    this.$http.get("https://jsonplaceholder.typicode.com/users/" + id)
-    .then(response => {
-      return response.json();
-    }).then(user => {
-      this.nombre = user.name;
-      this.email = user.email;
-    });
+     this._callToUser();
   }
 };
 </script>
