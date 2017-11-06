@@ -6,8 +6,8 @@
           <b-link router-tag="li" class="nav-link" to="/" active-class="active" exact>
             <a class="nav-item" href="">Inicio</a>
           </b-link>
-          <b-link router-tag="li" class="nav-item nav-link" to="/usuarios" active-class="active">
-            <a href="">Usuarios</a>
+          <b-link router-tag="li" class="nav-link" to="/usuarios" active-class="active">
+            <a class="nav-item" href="">Usuarios</a>
           </b-link>
       </ul>
     </nav>
@@ -15,7 +15,14 @@
 </template>
 <script>
 </script>
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
+  a {
+    text-decoration:none;
+  }
+  li.nav-link.active {
+    a.nav-item {
+        color : white;
+        }
+  }
 </style>
 

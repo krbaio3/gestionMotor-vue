@@ -1,18 +1,21 @@
 <template>
   <div>
-    <p>Lista de Usuarios</p>
+    <h2>Lista de Usuarios</h2>
     <ul class="list-group">
       <li class="list-group-item" v-for="usuario in usuarios">
         {{usuario.name}}
       </li>
     </ul>
+    <br>
+    <router-view></router-view>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      usuarios: {}
+      id: this.$route.params.id,
+      usuarios: {},
     }
   },
   created() {
@@ -23,6 +26,6 @@ export default {
   }
 };
 </script>
-<style lang="sass" scoped>
+<style lang="scss">
 </style>
 

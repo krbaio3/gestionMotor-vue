@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <b-container>
       <encabezado></encabezado>
-    <div class="jumbotron">
+    <b-jumbotron class="jumbotron">
       <router-view></router-view>
-    </div>
-  </div>
+    </b-jumbotron>
+  </b-container>
 </template>
 <script>
 import encabezado from "./components/encabezado.component.vue";
@@ -15,7 +15,8 @@ export default {
 };
 </script>
 <style lang="scss">
-// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 // @import "../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
 // @import "../node_modules/bootstrap/dist/css/bootstrap.css"
+@import"./styles/styles";
 </style>
