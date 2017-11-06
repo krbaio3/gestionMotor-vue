@@ -29,8 +29,8 @@ export default {
           this.email = user.email;
         });
     },
-    goBack(){
-      this.$router.push('/usuarios');
+    goBack() {
+      this.$router.push({ name: "usuarios" });
     }
   },
   created() {
