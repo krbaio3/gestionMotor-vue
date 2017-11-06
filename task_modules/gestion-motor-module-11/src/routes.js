@@ -4,7 +4,6 @@ import InfoUsuarioComponent from './components/infoUsuario.component.vue';
 
 export const rutas = [
   {path:'', component:InicioComponent},
-  {path:'/usuarios', component:UsuariosComponent, children:[
-    {path: ':id', component: InfoUsuarioComponent, name:'infoUsuario'},
-  ]},
+  {path:'/usuarios', component:UsuariosComponent},
+  {path: ':id', component: InfoUsuarioComponent, name:'infoUsuario'},
 ];

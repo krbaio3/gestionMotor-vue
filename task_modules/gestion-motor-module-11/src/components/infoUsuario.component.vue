@@ -5,6 +5,7 @@
     <p><strong>Nombre: </strong> {{nombre}}</p>
     <p><strong>Correo Electronico: </strong> {{email}}</p>
   </div>
+  <b-button variant="success" @click="goBack">Aceptar</b-button>
 </div>
 </template>
 <script>
@@ -27,15 +28,13 @@ export default {
           this.nombre = user.name;
           this.email = user.email;
         });
-    }
-  },
-  watch: {
-    $route() {
-      this._callToUser();
+    },
+    goBack(){
+      this.$router.push('/usuarios');
     }
   },
   created() {
-     this._callToUser();
+    this._callToUser();
   }
 };
 </script>
