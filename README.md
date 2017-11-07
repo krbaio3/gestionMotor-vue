@@ -1,6 +1,6 @@
-# gestion-motor-vue2
+# gestion-motor-vue
 
-> A Vue.js project
+> Gestion de Talleres con VueJS
 
 ## Build Setup
 

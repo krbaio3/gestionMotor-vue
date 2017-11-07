@@ -1,7 +1,7 @@
 {
-  "name": "gestion-motor-vue2",
-  "version": "0.0.0",
-  "description": "A Vue.js project",
+  "name": "gestion-motor-vue",
+  "version": "1.0.0",
+  "description": "Gestion de Talleres con VueJS",
   "author": "KrBaIO3 <krbaio3@gmail.com>",
   "private": true,
   "scripts": {
