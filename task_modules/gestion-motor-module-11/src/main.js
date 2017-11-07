@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue';
+import BootstrapVue from 'bootstrap-vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import { rutas } from './routes';
