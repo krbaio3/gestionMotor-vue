@@ -68,6 +68,10 @@ zip
 
 # Files css
 .css
+yarn-error.log*
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
 
 # Config Editor
 .vscode
@@ -75,4 +79,5 @@ nbproject
 .DS_Store
 .thumb
 .authrc
+# Editor directories and files
 .idea
