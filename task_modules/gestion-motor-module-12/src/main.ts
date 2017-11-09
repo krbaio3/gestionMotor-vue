@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { ComponentOptions } from 'vue/types/options';
+import { HelloComponent } from './hello'
 
 interface State extends Vue {
   message: string;
@@ -7,19 +8,16 @@ interface State extends Vue {
 
 new Vue({
   el: '#root',
-  template: `<div>
-                <h1>{{message}}</h1>
-                <input
-                  type="text"
-                    :value="message"
-                    @input="onChange($event.target.value)"/>
-              </div>`,
+  template: `
+            <div>
+              <h1>{{message}}</h1>
+              <hello
+                v-model="message"/>
+            </div>`,
   data: {
     message: 'Hello from Vue.js'
   },
-  methods: {
-    onChange: function (value) {
-      this.message = value;
-    },
+  components: {
+    hello: HelloComponent,
   },
 } as ComponentOptions<State>);
