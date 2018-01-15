@@ -5,11 +5,11 @@
     "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
-    "jsx": "react",
     "sourceMap": true,
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true
+    "strict": true,
+    "jsx": "preserve",
   },
   "compileOnSave": false,
   "exclude": [
