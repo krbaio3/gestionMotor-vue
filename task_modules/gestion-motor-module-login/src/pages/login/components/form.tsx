@@ -6,7 +6,7 @@ export const FormComponent = Vue.extend({
             <div class="panel-body">
                 <form role="form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="e-mail" />
+                        <input type="mail" class="form-control" placeholder="e-mail" />
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="password" />
