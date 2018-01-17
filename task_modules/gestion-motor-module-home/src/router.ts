@@ -5,7 +5,7 @@ import { HomePage } from './pages/home/list';
 const routes: RouteConfig[] = [
     { path: '/', redirect: '/login' },
     { path: '/login', component: LoginPage },
-    { path: '/recipe', component: HomePage },
+    { path: '/home', component: HomePage },
 ];
 
 export const router = new Router({

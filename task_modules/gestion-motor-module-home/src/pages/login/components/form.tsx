@@ -12,7 +12,7 @@ export const FormComponent = Vue.extend({
                         <input type="password" class="form-control" placeholder="password" />
                     </div>
                     <router-link
-                    to="/recipe" 
+                    to="/home" 
                     class="btn btn-lg btn-success btn-block">Login</router-link>
                 </form>
             </div>
