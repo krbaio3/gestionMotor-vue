@@ -1,33 +1,19 @@
 <template>
-<div>
-    <header-nav></header-nav>
-        <div class="jumbotron">
-            <h1>Hola: {{saludo}}</h1>
-      </div>
-      
   <div>
-        <ul class="menu">          
-          <li>
-            <card></card>
-          </li>
-          
-          <li>
-            <card></card>
-          </li>  
-          
-          <li>
-            <card></card>
-          </li>
-          
-          </ul>
-  </div>
+    <header-nav></header-nav>
+    <b-jumbotron class="jumbotron">
+      <b-card-group deck>
+        <card v-for="tarea of tareas" :key="tarea.title"></card>
+      </b-card-group>          
+    </b-jumbotron>
     <footer-nav></footer-nav>
-</div>
+  </div>
 </template>
 <script>
 import headerNav from '@/components/HeaderNav';
 import footerNav from '@/components/FooterNav';
 import card from '@/components/Card';
+import tareas from '@/scripts/tareas';
 
 export default {
   components: {
@@ -38,6 +24,7 @@ export default {
   data() {
     return {
       saludo: 'Jorge',
+      tareas,
     };
   },
 };
