@@ -3,7 +3,9 @@
     <header-nav></header-nav>
     <b-jumbotron class="jumbotron">
       <b-card-group deck>
-        <card v-for="tarea of tareas" :key="tarea.title"></card>
+        <div v-for="tarea of tareas" :key="tarea.title">
+          <card :tarea="tarea"></card>
+        </div>
       </b-card-group>          
     </b-jumbotron>
     <footer-nav></footer-nav>
