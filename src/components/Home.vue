@@ -13,7 +13,7 @@
 import headerNav from '@/components/HeaderNav';
 import footerNav from '@/components/FooterNav';
 import card from '@/components/Card';
-import tareas from '@/scripts/tareas';
+import tareas from '@/api/tareas';
 
 export default {
   components: {
