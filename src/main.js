@@ -5,10 +5,19 @@ import BootstrapVue from 'bootstrap-vue';
 import App from './App';
 import router from './router';
 
-
 Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
+
+const bus = new Vue({
+  methods: {
+    actualizarContador(numTareas) {
+      this.$emit('actualizarContador', numTareas);
+    },
+  },
+});
+
+export { bus as default };
 
 /* eslint-disable no-new */
 new Vue({
