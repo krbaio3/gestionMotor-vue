@@ -13,6 +13,9 @@
     "module": "es2015",
     "moduleResolution": "node"
   },
+  "include": [
+    "src/",
+  ],
   "exclude": [
     "node_modules",
     "task_modules"

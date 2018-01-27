@@ -4,7 +4,7 @@
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-        <b-navbar-brand href="#" disabled><img src="../assets/home.svg" class="home-img"></b-navbar-brand>
+        <b-navbar-brand href="#" disabled><img src="@/assets/home.svg" class="home-img"></b-navbar-brand>
         <b-collapse is-nav id="nav_collapse">
 
           <b-navbar-nav>
@@ -20,14 +20,14 @@
               <b-button size="sm" variant="success" class="my-2 my-sm-0" type="button" :disabled="header.button">Search</b-button>
             </b-nav-form>
 
-            <b-nav-item href="#">
+            <b-nav-item to="config">
               <span class="fa-stack fa-lg icon-ajust">
                 <i class="fa fa fa-cog fa-stack-1x"></i>
               </span>
               Configuración
             </b-nav-item>
 
-            <b-nav-item href="#">
+            <b-nav-item to="user">
               <span class="fa-stack fa-lg icon-ajust">
                 <i class="fa fa-user fa-stack-1x"></i>
               </span>
@@ -117,6 +117,10 @@ export default {
   }
   .disabled{
     color: rgba(255, 255, 255, 0.25);
+    &:hover{
+      color: rgba(255, 255, 255, 0.25);
+    }
+    cursor: not-allowed;
   }
 }
 </style>

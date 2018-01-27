@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import headerNav from '@/components/HeaderNav';
+import { headerNav } from '@/components/Header/';
 import footerNav from '@/components/FooterNav';
 import home from '@/components/Home';
 
