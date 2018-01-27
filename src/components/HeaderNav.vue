@@ -92,21 +92,32 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.home-img{
-  width: 32px;
-  height: 32px;
-  margin-top: 8px;
-  cursor: default;
-}
-.form-control:focus{
-  // background-color: transparent;
-}
-.navbar.navbar-dark form input[type=text]:focus:not([readonly]){
-  // background-color: transparent;
-  border-color: #ff4444;
-}
-.fa-stack.icon-ajust {
-  width: 1em !important;
+#headerNav{
+  .home-img{
+    width: 32px;
+    height: 32px;
+    // margin-top: 8px;
+    cursor: default;
+  }
+  .form-control:focus{
+    // background-color: transparent;
+  }
+  .navbar.navbar-dark form input[type=text]:focus:not([readonly]){
+    // background-color: transparent;
+    border-color: #ff4444;
+  }
+  .fa-stack.icon-ajust {
+    width: 1em !important;
+  }
+  .nav-link {
+    color: rgba(255, 255, 255, 255);
+    &:hover{
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .disabled{
+    color: rgba(255, 255, 255, 0.25);
+  }
 }
 </style>
 

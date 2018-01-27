@@ -41,7 +41,7 @@ export default {
     color: white;
   }
   // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     a {
       padding-right: 30px;
       &:last-child{
