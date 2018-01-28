@@ -45,14 +45,14 @@
 
       <InputPerformance 
         placeholder="Introduce Matricula..."
-        icono="fa fa-search" />
+        icono="fa fa-search" call="busca" @callback="searchLicense"/>
 
         <!-- Bloque de Marca -->
       <InputPerformance onSearchClick={callToServiceMarca}
         placeholder="Introduce Marca..."
         icono="fa fa-search" />
 
-      <!-- Bloque de Modelo -->
+      <!-- Bloque de Modelo --> 
       <InputPerformance onSearchClick={callToServiceModelo}
         placeholder="Introduce Modelo..."
         icono="fa fa-search" />
@@ -66,16 +66,17 @@
       </div>
 
       <!-- Bloque de Combustible -->
-      <InputDropDown title="combustible"/>
+      <!-- <InputDropDown title="combustible"/> -->
 
       <!--  Bloque CodMotor y Potencia  -->
-      <InputDropDown title="codMotor"/>
+      <!-- <InputDropDown title="codMotor"/>
       <InputDropDown title="CV"/>
 
-      <InputDropDown/>
+      <InputDropDown/> -->
 
       <!-- Bloque de Año -->
       <InputSimple
+        placeholder="Introduce Año..."
         icono="fa fa-calendar" tipo="month" />
 
       <!-- Bloque de Km -->
@@ -90,6 +91,7 @@
 
       <!-- Bloque de ITV -->
       <InputSimple
+        placeholder="Introduce Fecha ITV..."
         icono="fa fa-calendar" tipo="date" />
 
       <!-- Bloque de Escaneo ficha tecnica -->
@@ -135,6 +137,12 @@ export default {
   components: {
     InputPerformance,
     InputSimple,
+  },
+  methods: {
+    searchLicense(event) {
+      console.log('esto es una prueba', event);
+    //   window.alert('ssss');
+    },
   },
 };
 </script>
