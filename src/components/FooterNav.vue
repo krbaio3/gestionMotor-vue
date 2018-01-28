@@ -24,6 +24,10 @@
         <a href="https://www.instagram.com/?hl=es" target="_blank">
           <i class="fa fa-instagram" aria-hidden="true"></i>
         </a> 
+
+        <a href="https://wallet.google.com/" target="_blank">
+          <i class="fa fa-google-wallet" aria-hidden="true"></i>
+        </a> 
   </div>
 </template>
 <script>

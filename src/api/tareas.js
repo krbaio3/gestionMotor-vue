@@ -4,7 +4,7 @@ const tareas = [{
   text: 'Lorem ipsum',
   textButton: 'tryMe',
   img: 'https://lorempixel.com/300/300/',
-  toButtom: 'Casa',
+  toButtom: 'Vehicles',
   imgAlt: 'Vehiculos',
 },
 {
