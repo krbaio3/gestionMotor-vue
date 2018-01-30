@@ -1,9 +1,9 @@
 <template>
   <div class="mb-2">
       <div class="input-group">
-        <input type="text" class="form-control" v-model="license" :placeholder="placeholder" />
+        <input type="text" class="form-control" v-model="modelo" :placeholder="placeholder"/>
         <span class="input-group-btn">
-          <button class="btn btn-info" type="button" @click="callback">
+          <button class="btn btn-info" type="button" @click="callback" :disabled="modelo.length > 0 ? false : true">
             <i :class="icono" aria-hidden="true" />
           </button>
         </span>
@@ -17,16 +17,17 @@ export default {
     placeholder: { type: String, required: true },
     icono: { type: String, required: false },
     call: { type: String, required: false },
+    disabled: { type: Boolean, required: false, default: false },
   },
   data() {
     return {
-      license: '',
+      modelo: '',
     };
   },
   methods: {
     callback() {
       console.log(`esto es el callback ${this.call}`);
-      this.$emit('callback', this.license);
+      this.$emit('callback', this.modelo);
     },
   },
 };

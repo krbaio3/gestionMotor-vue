@@ -1,5 +1,5 @@
 // import { searchLicense } from '@/models';
-import { mockLicense } from './mockData';
+import mockLicense from './mockData';
 
 // const fetchLicense = () => new Promise((resolve, reject) => {
 //   window.setTimeout(() => {

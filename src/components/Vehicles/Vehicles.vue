@@ -3,54 +3,20 @@
     <h1>Vehiculos</h1>
     <hr>
     <br>
-    <!-- <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-
-    <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-        <span class="input-group-text" id="basic-addon2">@example.com</span>
-    </div>
-    </div>
-
-    <label for="basic-url">Your vanity URL</label>
-    <div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-    </div>
-    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-
-    <div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">$</span>
-    </div>
-    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-    <div class="input-group-append">
-        <span class="input-group-text">.00</span>
-    </div>
-    </div>
-
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">With textarea</span>
-        </div>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-    </div> -->
     <form action="">
 
       <InputPerformance 
         placeholder="Introduce Matricula..."
-        icono="fa fa-search" call="busca" @callback="searchLicense"/>
+        icono="fa fa-search"
+        call="busca"
+        @callback="searchLicense"/>
 
         <!-- Bloque de Marca -->
-      <InputPerformance onSearchClick={callToServiceMarca}
+      <InputPerformance
         placeholder="Introduce Marca..."
-        icono="fa fa-search" />
+        icono="fa fa-search"
+        call="busca"
+        @callback="searchLicense"/>
 
       <!-- Bloque de Modelo --> 
       <InputPerformance onSearchClick={callToServiceModelo}
@@ -66,12 +32,64 @@
       </div>
 
       <!-- Bloque de Combustible -->
-      <!-- <InputDropDown title="combustible"/> -->
-
+      <b-form-select v-model="selected" :options="options" class="mb-2" />
+       
       <!--  Bloque CodMotor y Potencia  -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" aria-hidden="true" id="basic-addon1">Potencia</span>
+        </div>
+        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
+      </div>
+
+      <b-input-group class="mb-3">
+        <b-dropdown text="Combustible" variant="info" v-model="dropComb">
+          <b-dropdown-item>First Action</b-dropdown-item>
+          <b-dropdown-item>Second Action</b-dropdown-item>
+          <b-dropdown-item>Third Action</b-dropdown-item>
+          <b-dropdown-divider></b-dropdown-divider>
+          <b-dropdown-item>Something else here...</b-dropdown-item>
+          <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+        </b-dropdown>
+        <b-form-input v-model="dropComb"
+          type="text"
+          disabled>
+        </b-form-input>
+      </b-input-group>
+
+      <b-input-group class="mb-3">
+        <input 
+            :type="tipo"
+            class="form-control"
+            :placeholder="placeholder"
+            :value="value"
+            :disabled="disabled" 
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            />
+        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
+      </b-input-group>
+
+
+      <div class="input-group mb-3">
+        <input 
+            :type="tipo"
+            class="form-control"
+            :placeholder="placeholder"
+            :value="value"
+            :disabled="disabled" 
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            />
+        <div class="input-group-prepend">
+            <span :class="icono" class="input-group-text" aria-hidden="true" id="basic-addon1"></span>
+        </div>
+        <b-form-select v-model="selected" :options="options" variant="info" class="form-control info" />
+      </div>
+
+
       <!-- <InputDropDown title="codMotor"/>
       <InputDropDown title="CV"/>
-
       <InputDropDown/> -->
 
       <!-- Bloque de Año -->
@@ -138,11 +156,35 @@ export default {
     InputPerformance,
     InputSimple,
   },
+  data() {
+    return {
+      selected: null,
+      options: [
+        { value: null, text: 'Combustible...' },
+        { value: 'a', text: 'This is First option' },
+        { value: 'b', text: 'Selected Option' },
+        { value: { C: '3PO' }, text: 'This is an option with object value' },
+        { value: 'd', text: 'This one is disabled', disabled: true },
+      ],
+    };
+  },
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
-    //   window.alert('ssss');
+      // Llamada a API
     },
   },
 };
 </script>
+<style lang="postcss" scoped>
+  .info{
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    &:hover {
+      color: black;
+      background-color: #fff;
+      border-color: #17a2b8;
+    }
+}
+</style>
