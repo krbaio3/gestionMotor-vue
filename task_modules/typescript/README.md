@@ -1,4 +1,4 @@
-# typescript
+# typescript-2
 
 > A Vue.js project
 

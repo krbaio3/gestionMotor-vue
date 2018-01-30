@@ -18,16 +18,18 @@
     </ul>
   </div>
 </template>
+
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+
 export default Vue.extend({
   name: 'hello',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js PWA'
-    }
-  }
-})
+      msg: 'Welcome to Your Vue.js PWA',
+    };
+  },
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

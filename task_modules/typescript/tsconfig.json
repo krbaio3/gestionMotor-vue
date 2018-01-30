@@ -1,5 +1,19 @@
 {
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules",
+        "task_modules",
+    ],
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
         "lib": [
             "dom",
             "es5",
@@ -9,6 +23,10 @@
         "module": "es2015",
         "moduleResolution": "node",
         "sourceMap": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true
     }
 }
