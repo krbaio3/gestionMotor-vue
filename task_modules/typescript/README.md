@@ -1,6 +1,6 @@
-# typescript-2
+# Digital WorkShop
 
-> A Vue.js project
+> Gestion de Talleres con VueJS y TupeScript
 
 ## Build Setup
 

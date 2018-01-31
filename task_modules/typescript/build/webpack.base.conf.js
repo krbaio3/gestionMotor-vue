@@ -4,6 +4,7 @@ const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
+const webpack = require('webpack');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -12,6 +13,10 @@ function resolve(dir) {
 module.exports = {
   entry: {
     app: './src/main.ts',
+    vendor: ['vue',
+      'bootstrap-vue',
+      'vue-resource',
+      'vue-router'],
   },
   output: {
     path: config.build.assetsRoot,
@@ -96,4 +101,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'], // si no separamos en app y vendor, cada vez que usamos una libreria de terceros, copia y pega el codigo, esto optimiza lo repetido en un vendor
+      // todo el codigo comun lo quita y lo pone en vendor
+    }),
+  ],
 };

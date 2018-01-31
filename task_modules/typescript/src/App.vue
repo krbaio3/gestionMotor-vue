@@ -17,7 +17,9 @@ export default Vue.extend({
   name: 'app',
 });
 </script>
-<style>
+<style lang="scss">
+@import './styles/styles.scss';
+
 body {
   margin: 0;
 }
