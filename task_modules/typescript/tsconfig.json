@@ -19,14 +19,19 @@
             "es5",
             "es2015"
         ],
-        "target": "es5",
+        "declaration": false,
+        "target": "es6",
         "module": "es2015",
         "moduleResolution": "node",
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "noImplicitThis": true,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+        // this enables stricter inference for data properties on `this`
+        "strict": true,
+        "noLib": false,
+        "suppressImplicitAnyIndexErrors": true,
     }
 }
