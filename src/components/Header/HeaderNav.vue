@@ -59,7 +59,9 @@
 <!-- navbar-1.vue -->
     </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
+
 // const Props = {
 //   title: { type: String, required: true },
 //   disabled: { type: Boolean, default: false, required: false },
@@ -69,7 +71,8 @@
 //   toButtom: { type: String, required: true },
 //   imgAlt: { type: String, required: false },
 // };
-export default {
+
+export default Vue.extend({
   name: 'home',
   // props: Props,
   data() {
@@ -89,7 +92,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 #headerNav{

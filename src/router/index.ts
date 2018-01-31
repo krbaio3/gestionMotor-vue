@@ -1,13 +1,13 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import vueRouter from 'vue-router';
 import Login from '@/components/Login';
 import Home from '@/components/Home';
 import { Config, User } from '@/components/Header';
 import Vehicles from '@/components/Vehicles/Vehicles';
 
-Vue.use(Router);
+Vue.use(vueRouter);
 
-export default new Router({
+export default new vueRouter({
   routes: [
     {
       path: '/',

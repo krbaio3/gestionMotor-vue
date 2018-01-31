@@ -9,11 +9,12 @@
     </b-jumbotron>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import card from '@/components/Card';
 import tareas from '@/api/tareas';
 
-export default {
+export default Vue.extend({
   components: {
     card,
   },
@@ -54,7 +55,7 @@ export default {
   destroyed() {
     console.log('llamando a Destroy');
   },
-};
+});
 </script> 
 <style lang="scss" scoped>
 ul.menu {

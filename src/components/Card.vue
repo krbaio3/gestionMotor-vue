@@ -11,7 +11,9 @@
   </b-card>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
+
 const Props = {
   tarea: {
     title: { type: String, required: true },
@@ -25,7 +27,8 @@ const Props = {
 };
 // const Props = ['tarea'];
 
-export default {
+export default Vue.extend({
+
   name: 'Card',
   props: Props,
   data() {
@@ -33,7 +36,7 @@ export default {
       // irA: tarea.toButtom,
     };
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .ancho-max {

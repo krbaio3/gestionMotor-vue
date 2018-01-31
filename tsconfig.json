@@ -1,23 +1,37 @@
 {
-  "compilerOptions": {
-    // this aligns with Vue's browser support
-    "target": "es6",
-    "declaration": false,
-    "noImplicitAny": false,
-    // this enables stricter inference for data properties on `this`
-    "strict": true,
-    "sourceMap": true,
-    "noLib": false,
-    "suppressImplicitAnyIndexErrors": true,
-    // if using webpack 2+ or rollup, to leverage tree shaking:
-    "module": "es2015",
-    "moduleResolution": "node"
-  },
-  "include": [
-    "src/",
-  ],
-  "exclude": [
-    "node_modules",
-    "task_modules"
-  ]
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules",
+        "task_modules",
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "lib": [
+            "dom",
+            "es5",
+            "es2015"
+        ],
+        "declaration": false,
+        "target": "es6",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        // this enables stricter inference for data properties on `this`
+        "strict": true,
+        "noLib": false,
+        "suppressImplicitAnyIndexErrors": true,
+    }
 }

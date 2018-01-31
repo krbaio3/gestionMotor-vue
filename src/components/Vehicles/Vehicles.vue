@@ -147,10 +147,11 @@
     </form>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { InputPerformance, InputSimple } from '@/components/Shared/';
 
-export default {
+export default Vue.extend({
   name: 'Vehiculos',
   components: {
     InputPerformance,
@@ -174,7 +175,7 @@ export default {
       // Llamada a API
     },
   },
-};
+});
 </script>
 <style lang="postcss" scoped>
   .info{

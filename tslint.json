@@ -1,9 +1,10 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
+    "extends": "tslint-config-airbnb",
     "jsRules": {},
-    "rules": {},
-    "rulesDirectory": []
+    "rules": {
+        "no-boolean-literal-compare":false,
+        "strict-boolean-expressions":false
+    },
+    "rulesDirectory": [
+    ]
 }

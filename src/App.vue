@@ -9,13 +9,13 @@
     <footer-nav :class="{ display : hide }"></footer-nav>
   </div>
 </template>
-
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { headerNav } from '@/components/Header/';
 import footerNav from '@/components/FooterNav';
 import home from '@/components/Home';
 
-export default {
+export default Vue.extend({
   name: 'App',
   components: {
     headerNav,
@@ -33,7 +33,7 @@ export default {
       this.hide = event;
     },
   },
-};
+});
 </script>
 
 <style lang="scss">
