@@ -4,23 +4,23 @@
     <label for="imagen"> 
       Development by CSS 
     </label>
-    <header-nav :class="{ display : hide }"></header-nav>
+    <Header-nav :class="{ display : hide }"></Header-nav>
     <router-view @removeHeaders="hideHeaders"/>
-    <footer-nav :class="{ display : hide }"></footer-nav>
+    <Footer-nav :class="{ display : hide }"></Footer-nav>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { headerNav } from '@/components/Header/';
-import footerNav from '@/components/FooterNav';
-import home from '@/components/Home';
+import { HeaderNav } from '@/components/Header/index.ts';
+import FooterNav from '@/components/FooterNav';
+import Home from '@/components/Home';
 
 export default Vue.extend({
   name: 'App',
   components: {
-    headerNav,
-    footerNav,
-    home,
+    HeaderNav,
+    FooterNav,
+    Home,
   },
   data() {
     return {

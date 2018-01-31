@@ -16,8 +16,10 @@
     </div>
 </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import vue from 'vue';
+
+export default vue.extend({
   name: 'InputSimple',
   props: {
     placeholder: { type: String, required: true },
@@ -26,5 +28,5 @@ export default {
     disabled: { type: Boolean, required: false, default: false },
     icono: { type: String, required: true },
   },
-};
+});
 </script>

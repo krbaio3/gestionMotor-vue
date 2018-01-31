@@ -10,8 +10,10 @@
       </div>
     </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import vue from 'vue';
+
+export default vue.extend({
   name: 'InputPerformance',
   props: {
     placeholder: { type: String, required: true },
@@ -30,5 +32,5 @@ export default {
       this.$emit('callback', this.modelo);
     },
   },
-};
+});
 </script>

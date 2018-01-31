@@ -149,7 +149,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { InputPerformance, InputSimple } from '@/components/Shared/';
+import { InputPerformance, InputSimple } from '@/components/Shared/index.ts';
 
 export default Vue.extend({
   name: 'Vehiculos',

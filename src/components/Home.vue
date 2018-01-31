@@ -11,17 +11,17 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import card from '@/components/Card';
+import Card from '@/components/Card';
 import tareas from '@/api/tareas';
 
 export default Vue.extend({
   components: {
-    card,
+    Card,
   },
   data() {
     return {
-      saludo: 'Jorge',
       tareas,
+      saludo: 'Jorge',
     };
   },
   methods: {
