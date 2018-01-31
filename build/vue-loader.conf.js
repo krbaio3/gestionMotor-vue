@@ -1,4 +1,5 @@
 'use strict'
+
 const utils = require('./utils')
 const config = require('../config')
 const isProduction = process.env.NODE_ENV === 'production'
@@ -10,8 +11,9 @@ module.exports = {
       : config.dev.cssSourceMap,
     extract: isProduction
   }),
+  esModule: true,
   transformToRequire: {
-    video: 'src',
+    video: ['src', 'poster'],
     source: 'src',
     img: 'src',
     image: 'xlink:href'
