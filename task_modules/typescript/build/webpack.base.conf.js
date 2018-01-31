@@ -1,4 +1,4 @@
-
+'use strict';
 
 const path = require('path');
 const utils = require('./utils');
@@ -13,10 +13,12 @@ function resolve(dir) {
 module.exports = {
   entry: {
     app: './src/main.ts',
-    vendor: ['vue',
+    vendor: [
+      'vue',
       'bootstrap-vue',
       'vue-resource',
-      'vue-router'],
+      'vue-router'
+    ],
   },
   output: {
     path: config.build.assetsRoot,
