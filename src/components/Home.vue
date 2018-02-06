@@ -10,11 +10,11 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import vue from 'vue';
 import Card from '@/components/Card';
-import tareas from '@/api/tareas';
+import tareas from '../api/tareas.ts';
 
-export default Vue.extend({
+export default vue.extend({
   components: {
     Card,
   },

@@ -1,5 +1,5 @@
 // import { searchLicense } from '@/models';
-import mockLicense from './mockData';
+import mockData from './mockData';
 
 // const fetchLicense = () => new Promise((resolve, reject) => {
 //   window.setTimeout(() => {
@@ -11,8 +11,12 @@ import mockLicense from './mockData';
 const fetchLicense = () => new Promise((resolve) => {
   window.setTimeout(() => {
     // ¡Cumplimos la promesa!
-    resolve(mockLicense.json());
-  }, Math.random() * 2000);
+    resolve(mockData.json());
+  },                Math.random() * 2000);
 });
+
+
+// https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0
+
 
 export default fetchLicense;
