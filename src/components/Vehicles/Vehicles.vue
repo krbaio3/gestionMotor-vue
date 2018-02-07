@@ -9,19 +9,22 @@
         placeholder="Introduce Matricula..."
         icono="fa fa-search"
         call="busca"
-        @callback="searchLicense"/>
+        @callback="searchLicense"
+        />
 
         <!-- Bloque de Marca -->
       <InputPerformance
         placeholder="Introduce Marca..."
         icono="fa fa-search"
         call="busca"
-        @callback="searchLicense"/>
+        @callback="searchLicense"
+        :value="response.brand"/>
 
       <!-- Bloque de Modelo --> 
       <InputPerformance onSearchClick={callToServiceModelo}
         placeholder="Introduce Modelo..."
-        icono="fa fa-search" />
+        icono="fa fa-search" 
+        v-text="response.model"/>
 
       <!-- Bloque de Version -->
       <div class="mb-2">
@@ -30,67 +33,6 @@
           <span class="input-group-btn" />
         </div>
       </div>
-
-      <!-- Bloque de Combustible -->
-      <b-form-select v-model="selected" :options="options" class="mb-2" />
-       
-      <!--  Bloque CodMotor y Potencia  -->
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" aria-hidden="true" id="basic-addon1">Potencia</span>
-        </div>
-        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
-      </div>
-
-      <b-input-group class="mb-3">
-        <b-dropdown text="Combustible" variant="info" v-model="dropComb">
-          <b-dropdown-item>First Action</b-dropdown-item>
-          <b-dropdown-item>Second Action</b-dropdown-item>
-          <b-dropdown-item>Third Action</b-dropdown-item>
-          <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item>Something else here...</b-dropdown-item>
-          <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-        </b-dropdown>
-        <b-form-input v-model="dropComb"
-          type="text"
-          disabled>
-        </b-form-input>
-      </b-input-group>
-
-      <b-input-group class="mb-3">
-        <input 
-            :type="tipo"
-            class="form-control"
-            :placeholder="placeholder"
-            :value="value"
-            :disabled="disabled" 
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            />
-        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
-      </b-input-group>
-
-
-      <div class="input-group mb-3">
-        <input 
-            :type="tipo"
-            class="form-control"
-            :placeholder="placeholder"
-            :value="value"
-            :disabled="disabled" 
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            />
-        <div class="input-group-prepend">
-            <span :class="icono" class="input-group-text" aria-hidden="true" id="basic-addon1"></span>
-        </div>
-        <b-form-select v-model="selected" :options="options" variant="info" class="form-control info" />
-      </div>
-
-
-      <!-- <InputDropDown title="codMotor"/>
-      <InputDropDown title="CV"/>
-      <InputDropDown/> -->
 
       <!-- Bloque de Año -->
       <InputSimple
@@ -145,10 +87,13 @@
           <b-btn type="reset" variant="danger">Cancelar</b-btn>
         </div>
     </form>
+    <pre v-text="response"></pre>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import axios from 'axios';
+
 import { InputPerformance, InputSimple } from '@/components/Shared/';
 
 export default Vue.extend({
@@ -167,12 +112,17 @@ export default Vue.extend({
         { value: { C: '3PO' }, text: 'This is an option with object value' },
         { value: 'd', text: 'This one is disabled', disabled: true },
       ],
+      response: {},
     };
   },
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
-      // Llamada a API
+      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
+        .then((response) => {
+          console.log(response.data);
+          this.response = response.data;
+        });
     },
   },
 });
