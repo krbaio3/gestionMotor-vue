@@ -3,104 +3,67 @@
     <h1>Vehiculos</h1>
     <hr>
     <br>
-    <form action="">
-
+    <form action="#">
+      <!-- Bloque de Matricula -->
       <InputPerformance 
         placeholder="Introduce Matricula..."
         icono="fa fa-search"
-        call="busca"
+        call="matricula"
         @callback="searchLicense"/>
 
         <!-- Bloque de Marca -->
       <InputPerformance
         placeholder="Introduce Marca..."
         icono="fa fa-search"
-        call="busca"
-        @callback="searchLicense"/>
+        call="marca"
+        @callback="searchBrand"/>
 
       <!-- Bloque de Modelo --> 
-      <InputPerformance onSearchClick={callToServiceModelo}
+      <InputPerformance 
         placeholder="Introduce Modelo..."
-        icono="fa fa-search" />
+        icono="fa fa-search"
+        call="modelo"
+        @callback="searchModel" />
 
       <!-- Bloque de Version -->
       <div class="mb-2">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Introduce Versión..." />
-          <span class="input-group-btn" />
         </div>
       </div>
 
-      <!-- Bloque de Combustible -->
-      <b-form-select v-model="selected" :options="options" class="mb-2" />
-       
-      <!--  Bloque CodMotor y Potencia  -->
+      <!-- Bloque de Combustible, CodMotor y Potencia -->
       <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" aria-hidden="true" id="basic-addon1">Combustible</span>
+        </div>
+        <b-form-select v-model="selected" :options="options" />
+
+        <div class="input-group-prepend">
+            <span class="input-group-text" aria-hidden="true" id="basic-addon1">Cilindrada</span>
+        </div>
+        <b-form-select v-model="cc" :options="optionsCC" class="form-control" />
+        
         <div class="input-group-prepend">
             <span class="input-group-text" aria-hidden="true" id="basic-addon1">Potencia</span>
         </div>
-        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
-      </div>
+        <b-form-select v-model="power" :options="optionsPower" class="form-control" />
 
-      <b-input-group class="mb-3">
-        <b-dropdown text="Combustible" variant="info" v-model="dropComb">
-          <b-dropdown-item>First Action</b-dropdown-item>
-          <b-dropdown-item>Second Action</b-dropdown-item>
-          <b-dropdown-item>Third Action</b-dropdown-item>
-          <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item>Something else here...</b-dropdown-item>
-          <b-dropdown-item disabled>Disabled action</b-dropdown-item>
-        </b-dropdown>
-        <b-form-input v-model="dropComb"
-          type="text"
-          disabled>
-        </b-form-input>
-      </b-input-group>
-
-      <b-input-group class="mb-3">
-        <input 
-            :type="tipo"
-            class="form-control"
-            :placeholder="placeholder"
-            :value="value"
-            :disabled="disabled" 
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            />
-        <b-form-select v-model="selected" :options="options" class="form-control mb-2" />
-      </b-input-group>
-
-
-      <div class="input-group mb-3">
-        <input 
-            :type="tipo"
-            class="form-control"
-            :placeholder="placeholder"
-            :value="value"
-            :disabled="disabled" 
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            />
         <div class="input-group-prepend">
-            <span :class="icono" class="input-group-text" aria-hidden="true" id="basic-addon1"></span>
+            <span class="input-group-text" aria-hidden="true" id="basic-addon1">Cod Motor</span>
         </div>
-        <b-form-select v-model="selected" :options="options" variant="info" class="form-control info" />
+          <input type="text" class="form-control" placeholder="-----" :value="power" />
       </div>
-
-
-      <!-- <InputDropDown title="codMotor"/>
-      <InputDropDown title="CV"/>
-      <InputDropDown/> -->
-
-      <!-- Bloque de Año -->
-      <InputSimple
-        placeholder="Introduce Año..."
-        icono="fa fa-calendar" tipo="month" />
 
       <!-- Bloque de Km -->
       <InputSimple
         placeholder="Introduce km..."
         icono="fa fa-road" />
+       
+      <!-- Bloque de Año -->
+      <InputSimple
+        text="Año Fabricacion"
+        icono="fa fa-calendar" tipo="month" />
 
       <!-- Bloque de NºBastidor -->
       <InputSimple
@@ -109,13 +72,13 @@
 
       <!-- Bloque de ITV -->
       <InputSimple
-        placeholder="Introduce Fecha ITV..."
+        text="Fecha ITV"
         icono="fa fa-calendar" tipo="date" />
 
       <!-- Bloque de Escaneo ficha tecnica -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="¿Tiene ficha técnica escaneada?" disabled />
-        <b-btn class="btn btn-info" v-b-modal.modal1>Adjuntar</b-btn>
+        <b-btn class="btn btn-info" v-b-modal.modalAdjuntar>Adjuntar</b-btn>
         <div class="input-group-prepend">
           <div class="input-group-text">
             <input type="checkbox" aria-label="Checkbox for following text input" disabled />
@@ -124,9 +87,11 @@
       </div>
 
       <!-- Modal Component -->
-      <b-modal id="modal1" title="Bootstrap-Vue">
-        <p class="my-4">Hello from modal!</p>
-      </b-modal>
+      <Modal 
+        id="modalAdjuntar" 
+        :title="titleModal"
+        :text="textModal">
+      </Modal>
 
       <!-- Bloque Observaciones -->
       <div class="input-group">
@@ -136,41 +101,68 @@
         <textarea class="form-control" aria-label="Observaciones"></textarea>
       </div>
 
-        <!-- Bloque Numero de PR -->
-        <!-- <label>Label1</label>
-        <input type="text" />
-        <button class="btn btn-search" /> -->
-        <div class="mt-4 mb-4">
-          <b-btn type="submit" variant="success">Aceptar</b-btn>
-          <b-btn type="reset" variant="danger">Cancelar</b-btn>
-        </div>
+      <div class="mt-4 mb-4">
+        <b-btn type="submit" variant="success">Aceptar</b-btn>
+        <b-btn type="reset" variant="danger" to="Home">Cancelar</b-btn>
+      </div>
     </form>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { InputPerformance, InputSimple } from '@/components/Shared/index.ts';
+import { InputPerformance, InputSimple, Modal } from '@/components/Shared/index.ts';
 
 export default Vue.extend({
   name: 'Vehiculos',
   components: {
     InputPerformance,
     InputSimple,
+    Modal,
   },
   data() {
     return {
       selected: null,
+      power: null,
+      cc: null,
+      titleModal: 'Esto es un titulo de pruebas',
+      textModal: 'Esto es un texto de pruebas',
       options: [
-        { value: null, text: 'Combustible...' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Selected Option' },
+        { value: null, text: '-----' },
+        { value: 'g', text: 'Gasolina' },
+        { value: 'd', text: 'Diesel' },
+        { value: 'o', text: 'Otros', disabled: true },
         { value: { C: '3PO' }, text: 'This is an option with object value' },
-        { value: 'd', text: 'This one is disabled', disabled: true },
+      ],
+      optionsPower: [
+        { value: null, text: '-----' },
+        { text: '150', value: 'B205E' },
+        { text: '154', value: 'B204E' },
+        { text: '185', value: 'B204L' },
+        { text: '200', value: 'B205/4R' },
+        { text: '215', value: 'Maptum St1' },
+        { text: '235', value: 'Maptum St2' },
+      ],
+      optionsCC: [
+        { value: null, text: '-----' },
+        { value: '1000', text: '1.0' },
+        { value: '1200', text: '1.2' },
+        { value: '1400', text: '1.4' },
+        { value: '1500', text: '1.5' },
+        { value: '1600', text: '1.6' },
+        { value: '2000', text: '2.0' },
       ],
     };
   },
   methods: {
     searchLicense(event) {
+      console.log('esto es una prueba', event);
+      // Llamada a API
+    },
+    searchBrand(event) {
+      console.log('esto es una prueba', event);
+      // Llamada a API
+    },
+    searchModel(event) {
       console.log('esto es una prueba', event);
       // Llamada a API
     },

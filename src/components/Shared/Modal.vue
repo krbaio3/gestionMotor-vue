@@ -1,14 +1,20 @@
 <template>
    <!-- Modal Component -->
-      <b-modal id="modal1" title="Bootstrap-Vue">
-        <p class="my-4">Hello from modal!</p>
+      <b-modal :id="id" :title="title">
+        <p class="my-4" v-text="text"></p>
       </b-modal>
 </template>
 <script lang="ts">
-import vue from 'vue';
+import Vue from 'vue';
 
-export default vue.extend({
+// export const Modal = Vue.extend({
+export default Vue.extend({
   name: 'Modal',
+  props: {
+    id: { type: String, required: true },
+    title: { type: String, required: true, default: 'Title' },
+    text: { type: String, required: true, default: 'Text' },
+  },
 });
 </script>
 
