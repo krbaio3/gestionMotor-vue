@@ -9,7 +9,13 @@
 </template>
 
 <style lang="scss">
-@import './styles.scss'; 
+
+// Variables para fuentes e inconos de font-awesome
+$fa-font-path: '../node_modules/font-awesome/fonts';
+// Import para fuentes e iconos de font-awesome
+@import '../node_modules/font-awesome/scss/font-awesome.scss';
+@import '../node_modules/bootstrap-vue/dist/bootstrap-vue';
+@import '../node_modules/bootstrap/scss/bootstrap';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
