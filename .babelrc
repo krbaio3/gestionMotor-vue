@@ -1,9 +1,5 @@
 {
   "presets": [
-    "env"
-  ],
-  "plugins": [
-    "transform-class-properties",
-    "transform-decorators"
+    "@vue/app"
   ]
 }

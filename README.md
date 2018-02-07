@@ -1,29 +1,30 @@
-# README #
+# Digital WorkShop
 
-This README would normally document whatever steps are necessary to get your application up and running.
+> Gestion de Talleres con VueJS y TupeScript
 
-### What is this repository for? ###
+## Build Setup
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+``` bash
+# install dependencies
+npm install
 
-### How do I get set up? ###
+# serve with hot reload at localhost:8080
+npm run dev
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+# build for production with minification
+npm run build
 
-### Contribution guidelines ###
+# build for production and view the bundle analyzer report
+npm run build --report
 
-* Writing tests
-* Code review
-* Other guidelines
+# run unit tests
+npm run unit
 
-### Who do I talk to? ###
+# run e2e tests
+npm run e2e
 
-* Repo owner or admin
-* Other community or team contact
+# run all tests
+npm test
+```
+
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
