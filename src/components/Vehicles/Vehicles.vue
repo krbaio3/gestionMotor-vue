@@ -4,31 +4,33 @@
     <hr>
     <br>
     <form action="#">
-      <!-- Bloque de Matricula -->
       <InputPerformance 
         placeholder="Introduce Matricula..."
         icono="fa fa-search"
-        call="matricula"
-        @callback="searchLicense"/>
-
+        call="busca"
+        @callback="searchLicense"
+        :value="response.license"
+        />
+ 
         <!-- Bloque de Marca -->
       <InputPerformance
         placeholder="Introduce Marca..."
         icono="fa fa-search"
-        call="marca"
-        @callback="searchBrand"/>
-
+        call="busca"
+        @callback="searchLicense"
+        :value="response.brand"/>
+ 
       <!-- Bloque de Modelo --> 
-      <InputPerformance 
+      <InputPerformance onSearchClick={callToServiceModelo}
         placeholder="Introduce Modelo..."
-        icono="fa fa-search"
-        call="modelo"
-        @callback="searchModel" />
-
+        icono="fa fa-search" 
+        :value="response.model"/>
+ 
       <!-- Bloque de Version -->
       <div class="mb-2">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Introduce Versión..." />
+          <span class="input-group-btn" />
         </div>
       </div>
 
@@ -106,10 +108,12 @@
         <b-btn type="reset" variant="danger" to="Home">Cancelar</b-btn>
       </div>
     </form>
+    <pre v-text="response"></pre>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import axios from 'axios';
 import { InputPerformance, InputSimple, Modal } from '@/components/Shared/index.ts';
 
 export default Vue.extend({
@@ -151,12 +155,18 @@ export default Vue.extend({
         { value: '1600', text: '1.6' },
         { value: '2000', text: '2.0' },
       ],
+      response: {},
     };
   },
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
       // Llamada a API
+      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
+        .then((response) => {
+          console.log(response.data);
+          this.response = response.data;
+        });
     },
     searchBrand(event) {
       console.log('esto es una prueba', event);
