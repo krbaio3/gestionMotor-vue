@@ -1,25 +1,33 @@
 <template>
   <div>
-    <b-card :title="tarea.title" :img-src="tarea.img"
-          :img-alt="tarea.imgAlt"
-          img-top tag="article"
-          class="mb-2 ancho-max">
-    <p class="card-text">
-      {{tarea.text}}
-    </p>
-    <b-button :to="{name:tarea.toButtom}" variant="success" :disabled="tarea.disabled">{{tarea.textButton}}</b-button>
-  </b-card>
+    <v-card :title="tarea.title"
+      :img-alt="tarea.imgAlt"
+      img-top tag="article"
+      class="mb-2 ancho-max">
+      <v-card-media :src="tarea.img"></v-card-media>
+      <v-card-title primary-title>
+        <div>
+          <h3 class="headline mb-o" v-text="tarea.text"></h3>
+        </div>
+      </v-card-title>
+      <v-card-actions 
+        flat
+        color="blue" 
+        v-text="tarea.textButton"
+        :disabled="tarea.disabled">
+      </v-card-actions>
+    </v-card>
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Tarea } from './tarea.model';
 
 @Component({
   name: 'Card',
 })
 export default class Card extends Vue {
-    // @Prop()
-    // title: string
+    @Prop() tarea: Tarea;
     // @Prop()
     // disabled: boolean
     // Data property
@@ -42,14 +50,14 @@ export default class Card extends Vue {
 //   }
 
   // Lifecycle hook
-//   mounted () {
-//     this.myDataProperty = 'Boop'
-//   }
+   mounted () {
+    console.log('montado');
+   }
 
-//   // Component method
-// updateMyProperty ($event: any) {
-//     this.myDataProperty = $event.target.value;
-//   }
+   // Component method
+   // updateMyProperty ($event: any) {
+   // this.myDataProperty = $event.target.value;
+   // }
 }
 
 // const Props = ['tarea'];

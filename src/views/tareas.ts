@@ -1,4 +1,4 @@
-const tareas = [{
+export const Tareas = [{
     title: 'Vehiculos',
     disabled: false,
     text: 'Lorem ipsum',
@@ -35,5 +35,3 @@ const tareas = [{
         imgAlt: 'Orden Trabajo',
     },
 ];
-
-export default tareas;
