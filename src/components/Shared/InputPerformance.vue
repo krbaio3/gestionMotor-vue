@@ -1,16 +1,14 @@
 <template>
   <div class="mb-2">
       <div class="input-group">
-        <input type="text" class="form-control" :placeholder="placeholder" v-model="value" @change="prueba"/>
+        <input type="text" class="form-control" :placeholder="placeholder" :value="value" @input="prueba($event.target.value)"/>
         <span class="input-group-btn">
           <button class="btn btn-info" type="button" @click="callback" >
             <i :class="icono" aria-hidden="true" />
           </button>
         </span>
       </div>
-    {{ value }}
     <hr>
-    {{ modelo }}
     </div>
 </template>
 <script>
@@ -24,42 +22,44 @@ export default {
   },
   data() {
     return {
-      modelo: 'bzzzzzzzzzzz',
+      modelo: '',
     };
   },
   methods: {
     callback() {
       console.log(`esto es el callback ${this.call}`);
-      this.$emit('callback', this.fullModel);
+      console.log('fullmodel: ', this.fullModel);
+      console.log('modelo: ', this.modelo);
+      this.$emit('callback', this.modelo);
     },
     updateValue(response) {
       console.log('Esta cambiando', response);
       this.value = response;
     },
     prueba(newValue) {
-      console.log('entraaaaa22222a');
-      // this.value = this.modelo;
-      this.$emit('value', newValue);
+      console.log('entraaaaaa: ', newValue);
+      this.modelo = newValue;
+      this.$emit('input', newValue);
     },
   },
-  computed: {
-    fullModel: {
-      // getter
-      get() {
-        return '';
-      },
-      // setter
-      set(newValue) {
-        console.log('33333', newValue);
-        this.modelo = newValue;
-      },
-    },
-  },
-  watch: {
-    value: (e) => {
-      console.log('entra en watch', e);
-      this.modelo = e;
-    },
-  },
+  // computed: {
+  //   fullModel: {
+  //     // getter
+  //     get() {
+  //       return '';
+  //     },
+  //     // setter
+  //     set(newValue) {
+  //       console.log('33333', newValue);
+  //       // this.modelo = newValue;
+  //     },
+  //   },
+  // },
+  //   watch: {
+  //     value: (e) => {
+  //       console.log('entra en watch', e);
+  //       this.modelo = e;
+  //     },
+  //   },
 };
 </script>

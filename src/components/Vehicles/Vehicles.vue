@@ -10,8 +10,8 @@
         icono="fa fa-search"
         call="matricula"
         @callback="searchLicense"
-        :value.sync="response.license"
-        @value="prueba"/>
+        :value="response.license"
+       />
 
         <!-- Bloque de Marca -->
       <InputPerformance
@@ -19,7 +19,8 @@
         icono="fa fa-search"
         call="marca"
         @callback="searchBrand"
-        :value="response.brand"/>
+        :value="response.brand"
+      />
 
       <!-- Bloque de Modelo --> 
       <InputPerformance 
@@ -27,7 +28,8 @@
         icono="fa fa-search"
         call="modelo"
         @callback="searchModel"
-        :value="response.model"/>
+        :value="response.model"
+      />
 
       <!-- Bloque de Version -->
       <div class="mb-2">
@@ -177,9 +179,6 @@ export default Vue.extend({
     searchModel(event) {
       console.log('esto es una prueba', event);
       // Llamada a API
-    },
-    prueba(event) {
-      console.log('padre', event);
     },
   },
 });
