@@ -1,4 +1,4 @@
-import InputPerformance from './InputPerformance';
+import InputPerformance from './InputPerformance.vue';
 import InputSimple from './InputSimple';
 import Modal from './Modal';
 

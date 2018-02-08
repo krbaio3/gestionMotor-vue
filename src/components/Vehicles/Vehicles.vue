@@ -7,30 +7,33 @@
       <InputPerformance 
         placeholder="Introduce Matricula..."
         icono="fa fa-search"
-        call="busca"
+        call="matricula"
         @callback="searchLicense"
         :value="response.license"
-        />
- 
+       />
+
         <!-- Bloque de Marca -->
       <InputPerformance
         placeholder="Introduce Marca..."
         icono="fa fa-search"
-        call="busca"
-        @callback="searchLicense"
-        :value="response.brand"/>
- 
+        call="marca"
+        @callback="searchBrand"
+        :value="response.brand"
+      />
+
       <!-- Bloque de Modelo --> 
       <InputPerformance onSearchClick={callToServiceModelo}
         placeholder="Introduce Modelo..."
-        icono="fa fa-search" 
-        :value="response.model"/>
- 
+        icono="fa fa-search"
+        call="modelo"
+        @callback="searchModel"
+        :value="response.model"
+      />
+
       <!-- Bloque de Version -->
       <div class="mb-2">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Introduce Versión..." />
-          <span class="input-group-btn" />
+          <input type="text" class="form-control" placeholder="Introduce Versión..." v-model="response.version"/>
         </div>
       </div>
 
@@ -54,39 +57,51 @@
         <div class="input-group-prepend">
             <span class="input-group-text" aria-hidden="true" id="basic-addon1">Cod Motor</span>
         </div>
-          <input type="text" class="form-control" placeholder="-----" :value="power" />
+          <input type="text" class="form-control" placeholder="-----" :value="response.cod_motor" />
       </div>
 
       <!-- Bloque de Km -->
       <InputSimple
         placeholder="Introduce km..."
-        icono="fa fa-road" />
+        icono="fa fa-road"
+        :value="response.kilometros"
+      />
        
       <!-- Bloque de Año -->
       <InputSimple
         text="Año Fabricacion"
-        icono="fa fa-calendar" tipo="month" />
+        icono="fa fa-calendar"
+        tipo="month"
+        :value="response.anio"
+      />
 
       <!-- Bloque de NºBastidor -->
       <InputSimple
         placeholder="Introduce Nº Bastidor..."
-        icono="fa fa-car" />
+        icono="fa fa-car"
+        :value="response.vin"
+       />
 
       <!-- Bloque de ITV -->
       <InputSimple
         text="Fecha ITV"
-        icono="fa fa-calendar" tipo="date" />
+        icono="fa fa-calendar"
+        tipo="date"
+        :value="response.itv"
+      />
 
       <!-- Bloque de Escaneo ficha tecnica -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="¿Tiene ficha técnica escaneada?" disabled />
-        <b-btn class="btn btn-info" v-b-modal.modalAdjuntar>Adjuntar</b-btn>
+        <b-btn v-show="response.ficha_escaneada" class="btn btn-info" v-b-modal.modalAdjuntar>Ver</b-btn>
+        <b-btn v-show="!response.ficha_escaneada" class="btn btn-info" v-b-modal.modalAdjuntar>Adjuntar</b-btn>
         <div class="input-group-prepend">
           <div class="input-group-text">
-            <input type="checkbox" aria-label="Checkbox for following text input" disabled />
+            <input type="checkbox" aria-label="Checkbox for following text input" disabled v-model="response.ficha_escaneada"/>
           </div>
         </div>
       </div>
+
 
       <!-- Modal Component -->
       <Modal 
@@ -161,6 +176,13 @@ export default Vue.extend({
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
+      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
+        .then((response) => {
+          console.log('entra', response);
+          response.data.kilometros = response.data.kilometros.toString();
+          response.data.anio = response.data.itv.substr(0, 7);
+          this.response = response.data;
+        });
       // Llamada a API
       axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
         .then((response) => {
