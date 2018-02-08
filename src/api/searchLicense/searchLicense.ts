@@ -1,22 +1,30 @@
-// import { searchLicense } from '@/models';
-import mockData from './mockData';
+// // import { searchLicense } from '@/models';
+// import mockData from './mockData';
 
-// const fetchLicense = () => new Promise((resolve, reject) => {
+// // const fetchLicense = () => new Promise((resolve, reject) => {
+// //   window.setTimeout(() => {
+// //     // ¡Cumplimos la promesa!
+// //     resolve(mockLicense.json());
+// //   }, Math.random() * 2000);
+// // });
+
+// const fetchLicense = () => new Promise((resolve) => {
 //   window.setTimeout(() => {
 //     // ¡Cumplimos la promesa!
-//     resolve(mockLicense.json());
+//     resolve(JSON.parse(mockData.mockLicense));
 //   }, Math.random() * 2000);
 // });
 
-const fetchLicense = () => new Promise((resolve) => {
-  window.setTimeout(() => {
-    // ¡Cumplimos la promesa!
-    resolve(mockData.json());
-  },                Math.random() * 2000);
-});
+// export default fetchLicense;
 
+import { vehicleModel } from '../../models/';
 
-// https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0
+export const licenseRequest = (license: vehicleModel): Promise<boolean> => (
+  isValidLicense(license) ?
+    Promise.resolve(true) :
+    Promise.reject('Not valid login')
+);
 
-
-export default fetchLicense;
+const isValidLicense = (license: vehicleModel) => (
+  license.license === ('m3928nb').toUpperCase()
+);
