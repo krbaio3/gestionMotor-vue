@@ -103,7 +103,6 @@
         </div>
       </div>
 
-      {{ response.ficha_escaneada }}
 
       <!-- Modal Component -->
       <Modal 
@@ -125,7 +124,6 @@
         <b-btn type="reset" variant="danger" to="Home">Cancelar</b-btn>
       </div>
     </form>
-    <pre v-text="response"></pre>
   </div>
 </template>
 <script lang="ts">
@@ -182,6 +180,7 @@ export default Vue.extend({
         .then((response) => {
           console.log('entra', response);
           response.data.kilometros = response.data.kilometros.toString();
+          response.data.anio = response.data.itv.substr(0, 7);
           this.response = response.data;
         });
       // Llamada a API

@@ -22,7 +22,6 @@
 <script lang="ts">
 import vue from 'vue';
 
-
 export default vue.extend({
   name: 'InputSimple',
   props: {
