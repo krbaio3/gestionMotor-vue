@@ -9,21 +9,25 @@
         placeholder="Introduce Matricula..."
         icono="fa fa-search"
         call="matricula"
-        @callback="searchLicense"/>
+        @callback="searchLicense"
+        :value.sync="response.license"
+        @value="prueba"/>
 
         <!-- Bloque de Marca -->
       <InputPerformance
         placeholder="Introduce Marca..."
         icono="fa fa-search"
         call="marca"
-        @callback="searchBrand"/>
+        @callback="searchBrand"
+        :value="response.brand"/>
 
       <!-- Bloque de Modelo --> 
       <InputPerformance 
         placeholder="Introduce Modelo..."
         icono="fa fa-search"
         call="modelo"
-        @callback="searchModel" />
+        @callback="searchModel"
+        :value="response.model"/>
 
       <!-- Bloque de Version -->
       <div class="mb-2">
@@ -106,10 +110,12 @@
         <b-btn type="reset" variant="danger" to="Home">Cancelar</b-btn>
       </div>
     </form>
+    <pre v-text="response"></pre>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import axios from 'axios';
 import { InputPerformance, InputSimple, Modal } from '@/components/Shared/index.ts';
 
 export default Vue.extend({
@@ -151,11 +157,17 @@ export default Vue.extend({
         { value: '1600', text: '1.6' },
         { value: '2000', text: '2.0' },
       ],
+      response: {},
     };
   },
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
+      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
+        .then((response) => {
+          console.log('entra', response);
+          this.response = response.data;
+        });
       // Llamada a API
     },
     searchBrand(event) {
@@ -165,6 +177,9 @@ export default Vue.extend({
     searchModel(event) {
       console.log('esto es una prueba', event);
       // Llamada a API
+    },
+    prueba(event) {
+      console.log('padre', event);
     },
   },
 });
