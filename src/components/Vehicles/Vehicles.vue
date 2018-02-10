@@ -179,7 +179,7 @@ export default Vue.extend({
         .then((response) => {
           console.log('entra', response);
           response.data.kilometros = response.data.kilometros.toString();
-          response.data.anio = response.data.itv.substr(0, 7);
+          response.data.anio = response.data.anio.substr(0, 7);
           this.response = response.data;
         });
       // Llamada a API
@@ -197,6 +197,13 @@ export default Vue.extend({
       console.log('esto es una prueba', event);
       // Llamada a API
     },
+  },
+  beforeCreate() {
+    console.log('llamada a tabIT');
+    axios.get('https://api.mockaroo.com/api/de620b70?count=1&key=daa3d0e0')
+      .then((response) => {
+        console.log('entra', response.data);
+      });
   },
 });
 </script>
