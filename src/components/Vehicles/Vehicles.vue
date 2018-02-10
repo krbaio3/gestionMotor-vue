@@ -115,7 +115,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Observaciones</span>
         </div>
-        <textarea class="form-control" aria-label="Observaciones"></textarea>
+        <textarea class="form-control" aria-label="Observaciones" v-model="response.observaciones"></textarea>
       </div>
 
       <div class="mt-4 mb-4">
@@ -123,7 +123,6 @@
         <b-btn type="reset" variant="danger" to="Home">Cancelar</b-btn>
       </div>
     </form>
-    <pre v-text="response"></pre>
   </div>
 </template>
 <script lang="ts">
