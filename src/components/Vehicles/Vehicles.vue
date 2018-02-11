@@ -1,5 +1,6 @@
 <template>
   <div id="vehicles" class="col-xs-4 col-lg-6">
+    <Loading></Loading>
     <h1>Vehiculos</h1>
     <hr>
     <br>
@@ -128,7 +129,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import axios from 'axios';
-import { InputPerformance, InputSimple, Modal } from '@/components/Shared/index.ts';
+import { InputPerformance, InputSimple, Modal, Loading } from '../Shared/index.ts';
 
 export default Vue.extend({
   name: 'Vehiculos',
@@ -136,6 +137,7 @@ export default Vue.extend({
     InputPerformance,
     InputSimple,
     Modal,
+    Loading,
   },
   data() {
     return {
@@ -175,17 +177,12 @@ export default Vue.extend({
   methods: {
     searchLicense(event) {
       console.log('esto es una prueba', event);
+      // Llamada a API
       axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
         .then((response) => {
           console.log('entra', response);
           response.data.kilometros = response.data.kilometros.toString();
           response.data.anio = response.data.anio.substr(0, 7);
-          this.response = response.data;
-        });
-      // Llamada a API
-      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
-        .then((response) => {
-          console.log(response.data);
           this.response = response.data;
         });
     },
@@ -208,14 +205,15 @@ export default Vue.extend({
 });
 </script>
 <style lang="postcss" scoped>
-  .info{
-    color: #fff;
-    background-color: #17a2b8;
+
+.info{
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  &:hover {
+    color: black;
+    background-color: #fff;
     border-color: #17a2b8;
-    &:hover {
-      color: black;
-      background-color: #fff;
-      border-color: #17a2b8;
-    }
+  }
 }
 </style>

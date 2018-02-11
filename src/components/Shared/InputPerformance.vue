@@ -11,8 +11,10 @@
       </div>
     </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'InputPerformance',
   props: {
     placeholder: { type: String, required: true },
@@ -58,5 +60,5 @@ export default {
   //       this.modelo = e;
   //     },
   //   },
-};
+});
 </script>

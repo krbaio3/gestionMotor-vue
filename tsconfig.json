@@ -33,5 +33,6 @@
         "strict": true,
         "noLib": false,
         "suppressImplicitAnyIndexErrors": true,
+        "experimentalDecorators": true
     }
 }
