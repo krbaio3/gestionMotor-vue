@@ -57,3 +57,40 @@
 //   // PDF loading error
 //   console.error(reason);
 // });
+
+interface ISelect {
+  value: string | null;
+  text: string;
+  disabled?: boolean;
+}
+
+let inicio = { value: null, text: '-----' };
+
+export const tipoCombustible : ISelect[] = [
+  inicio,
+    { value: 'g', text: 'Gasolina' },
+    { value: 'd', text: 'Diesel' },
+    { value: 'h', text: 'Hibrido' },
+    { value: 'e', text: 'Electrico' },
+    { value: 'o', text: 'Otros', disabled: true },
+];
+
+export const powerCodMotor: ISelect[] = [
+  inicio,
+    { text: '150', value: 'B205E' },
+    { text: '154', value: 'B204E' },
+    { text: '185', value: 'B204L' },
+    { text: '200', value: 'B205/4R' },
+    { text: '215', value: 'Maptum St1' },
+    { text: '235', value: 'Maptum St2' },
+];
+
+export const cilindrada: ISelect[] = [
+  inicio,
+    { value: '1000', text: '1.0' },
+    { value: '1200', text: '1.2' },
+    { value: '1400', text: '1.4' },
+    { value: '1500', text: '1.5' },
+    { value: '1600', text: '1.6' },
+    { value: '2000', text: '2.0' },
+];

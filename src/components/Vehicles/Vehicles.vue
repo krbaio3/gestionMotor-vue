@@ -1,6 +1,5 @@
 <template>
   <div id="vehicles" class="col-xs-4 col-lg-6">
-    <Loading></Loading>
     <h1>Vehiculos</h1>
     <hr>
     <br>
@@ -43,7 +42,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" aria-hidden="true" id="basic-addon1">Combustible</span>
         </div>
-        <b-form-select v-model="selected" :options="options" />
+        <b-form-select v-model="combustible" :options="optionsCombustible" />
 
         <div class="input-group-prepend">
             <span class="input-group-text" aria-hidden="true" id="basic-addon1">Cilindrada</span>
@@ -129,7 +128,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import axios from 'axios';
-import { InputPerformance, InputSimple, Modal, Loading } from '../Shared/index.ts';
+import { InputPerformance, InputSimple, Modal } from '../Shared/index.ts';
+import { tipoCombustible, powerCodMotor, cilindrada } from './vehicles.service.ts';
 
 export default Vue.extend({
   name: 'Vehiculos',
@@ -137,40 +137,17 @@ export default Vue.extend({
     InputPerformance,
     InputSimple,
     Modal,
-    Loading,
   },
   data() {
     return {
-      selected: null,
+      combustible: null,
       power: null,
       cc: null,
       titleModal: 'Esto es un titulo de pruebas',
       textModal: 'Esto es un texto de pruebas',
-      options: [
-        { value: null, text: '-----' },
-        { value: 'g', text: 'Gasolina' },
-        { value: 'd', text: 'Diesel' },
-        { value: 'o', text: 'Otros', disabled: true },
-        { value: { C: '3PO' }, text: 'This is an option with object value' },
-      ],
-      optionsPower: [
-        { value: null, text: '-----' },
-        { text: '150', value: 'B205E' },
-        { text: '154', value: 'B204E' },
-        { text: '185', value: 'B204L' },
-        { text: '200', value: 'B205/4R' },
-        { text: '215', value: 'Maptum St1' },
-        { text: '235', value: 'Maptum St2' },
-      ],
-      optionsCC: [
-        { value: null, text: '-----' },
-        { value: '1000', text: '1.0' },
-        { value: '1200', text: '1.2' },
-        { value: '1400', text: '1.4' },
-        { value: '1500', text: '1.5' },
-        { value: '1600', text: '1.6' },
-        { value: '2000', text: '2.0' },
-      ],
+      optionsCombustible: [{}],
+      optionsPower: [{}],
+      optionsCC: [{}],
       response: {},
     };
   },
@@ -180,10 +157,15 @@ export default Vue.extend({
       // Llamada a API
       axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
         .then((response) => {
-          console.log('entra', response);
+          console.log('entra', response.data);
           response.data.kilometros = response.data.kilometros.toString();
           response.data.anio = response.data.anio.substr(0, 7);
           this.response = response.data;
+          this.combustible = response.data.combustible;
+          // this.optionsCC.push({
+          //   value: response.data.cilindrada,
+          //   text: response.data.cilindrada,
+          // });
         });
     },
     searchBrand(event) {
@@ -202,6 +184,13 @@ export default Vue.extend({
         console.log('entra', response.data);
       });
   },
+  mounted() {
+    console.log(tipoCombustible);
+    this.optionsCombustible = tipoCombustible;
+    this.optionsPower = powerCodMotor;
+    this.optionsCC = cilindrada;
+  },
+
 });
 </script>
 <style lang="postcss" scoped>
