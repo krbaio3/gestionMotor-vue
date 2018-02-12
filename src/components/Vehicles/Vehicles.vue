@@ -67,14 +67,7 @@
         :value="response.kilometros"
       />
        
-      <!-- Bloque de Año -->
-      <InputSimple
-        text="Año Fabricacion"
-        icono="fa fa-calendar"
-        tipo="month"
-        :value="response.anio"
-      />
-
+  
       <!-- Bloque de NºBastidor -->
       <InputSimple
         placeholder="Introduce Nº Bastidor..."
