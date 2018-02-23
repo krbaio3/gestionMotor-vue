@@ -12,7 +12,9 @@
     </div>
 </template>
 <script>
-export default {
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'Login',
   data() {
     return {
@@ -58,7 +60,7 @@ export default {
   destroyed() {
     console.log('llamando a Destroy');
   },
-};
+});
 </script>
 <style lang="postcss" scoped>
 .ajuste{
