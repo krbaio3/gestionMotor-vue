@@ -58,13 +58,13 @@
 //   console.error(reason);
 // });
 
-interface ISelect {
+export interface ISelect {
   value: string | null;
   text: string;
   disabled?: boolean;
 }
 
-let inicio = { value: null, text: '-----' };
+const inicio = { value: null, text: '-----' };
 
 export const tipoCombustible : ISelect[] = [
   inicio,

@@ -120,71 +120,74 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import Component from 'vue-class-component';
 import axios from 'axios';
 import { InputPerformance, InputSimple, Modal } from '../Shared/index.ts';
 import { tipoCombustible, powerCodMotor, cilindrada } from './vehicles.service.ts';
-
-export default Vue.extend({
+@Component({
   name: 'Vehiculos',
   components: {
     InputPerformance,
     InputSimple,
     Modal,
   },
-  data() {
-    return {
-      combustible: null,
-      power: null,
-      cc: null,
-      titleModal: 'Esto es un titulo de pruebas',
-      textModal: 'Esto es un texto de pruebas',
-      optionsCombustible: [{}],
-      optionsPower: [{}],
-      optionsCC: [{}],
-      response: {},
-    };
-  },
-  methods: {
-    searchLicense(event) {
-      console.log('esto es una prueba', event);
-      // Llamada a API
-      axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
-        .then((response) => {
-          console.log('entra', response.data);
-          response.data.kilometros = response.data.kilometros.toString();
-          response.data.anio = response.data.anio.substr(0, 7);
-          this.response = response.data;
-          this.combustible = response.data.combustible;
-          // this.optionsCC.push({
-          //   value: response.data.cilindrada,
-          //   text: response.data.cilindrada,
-          // });
+})
+export default class Vehiculos extends Vue {
+  // data
+  combustible= null;
+  power = null;
+  cc = null;
+  titleModal = 'Esto es un titulo de pruebas';
+  textModal = 'Esto es un texto de pruebas';
+  optionsCombustible= [{}];
+  optionsPower= [{}];
+  optionsCC= [{}];
+  response = {};
+
+  // methods
+
+  searchLicense(event) {
+    console.log('esto es una prueba', event);
+    // Llamada a API
+    axios.get('https://my.api.mockaroo.com/vehiculos.json?key=daa3d0e0')
+      .then((response) => {
+        console.log('entra', response.data);
+        response.data.kilometros = response.data.kilometros.toString();
+        response.data.anio = response.data.anio.substr(0, 7);
+        this.response = response.data;
+        this.combustible = response.data.combustible;
+        this.optionsCC.push({
+          value: response.data.cilindrada,
+          text: response.data.cilindrada,
         });
-    },
-    searchBrand(event) {
-      console.log('esto es una prueba', event);
-      // Llamada a API
-    },
-    searchModel(event) {
-      console.log('esto es una prueba', event);
-      // Llamada a API
-    },
-  },
+      });
+  }
+  /* eslint class-methods-use-this: "error" */
+  /* eslint-env es6 */
+  searchBrand(event) {
+    console.log('esto es una prueba', event);
+    console.log(this);
+    // Llamada a API
+  }
+  searchModel(event) {
+    console.log('esto es una prueba', event);
+    console.log(this);// Llamada a API
+  }
   beforeCreate() {
     console.log('llamada a tabIT');
     axios.get('https://api.mockaroo.com/api/de620b70?count=1&key=daa3d0e0')
       .then((response) => {
         console.log('entra', response.data);
+        console.log(this);
       });
-  },
+  }
   mounted() {
     console.log(tipoCombustible);
     this.optionsCombustible = tipoCombustible;
     this.optionsPower = powerCodMotor;
     this.optionsCC = cilindrada;
-  },
-
-});
+  }
+}
 </script>
 <style lang="postcss" scoped>
 
