@@ -1,24 +1,20 @@
 <template>
   <div>
-    <header-nav></header-nav>
     <b-jumbotron class="jumbotron">
       <b-card-group deck>
-        <card v-for="tarea of tareas" :key="tarea.title"></card>
+        <div v-for="tarea of tareas" :key="tarea.title">
+          <card :tarea="tarea" class="fila"></card>
+        </div>
       </b-card-group>          
     </b-jumbotron>
-    <footer-nav></footer-nav>
   </div>
 </template>
 <script>
-import headerNav from '@/components/HeaderNav';
-import footerNav from '@/components/FooterNav';
 import card from '@/components/Card';
-import tareas from '@/scripts/tareas';
+import tareas from '@/api/tareas';
 
 export default {
   components: {
-    headerNav,
-    footerNav,
     card,
   },
   data() {
@@ -26,6 +22,37 @@ export default {
       saludo: 'Jorge',
       tareas,
     };
+  },
+  methods: {
+    hideHeaders() {
+      console.log('ocultar', false);
+    },
+  },
+  beforeCreate() {
+    console.log('llamando a beforeCreate');
+    // quitar este evento, para cargar cabecera sólo en pruebas
+    this.$emit('removeHeaders', false);
+  },
+  created() {
+    console.log('llamando a create');
+  },
+  beforeMount() {
+    console.log('llamando a beforeMount');
+  },
+  mounted() {
+    console.log('llamando a Mount');
+  },
+  beforeUpdate() {
+    console.log('llamando a beforeUpdate');
+  },
+  updated() {
+    console.log('llamando a update');
+  },
+  beforeDestroy() {
+    console.log('llamando a beforeDestroy');
+  },
+  destroyed() {
+    console.log('llamando a Destroy');
   },
 };
 </script> 
@@ -49,5 +76,13 @@ ul.menu {
       text-decoration: none;
     }
   }
+}
+.jumbotron{
+  margin-bottom: 0px;
+}
+.fila{
+    padding-left: 12%;
+    padding-right: 5%;
+    margin-bottom: 15%;
 }
 </style>

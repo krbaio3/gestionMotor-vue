@@ -1,73 +1,36 @@
 <template>
   <div>
-    <b-card title={tarea.title} img-src="https://lorempixel.com/200/200/technics/5/"
-          img-alt="Image"
+    <b-card :title="tarea.title" :img-src="tarea.img"
+          :img-alt="tarea.imgAlt"
           img-top tag="article"
           class="mb-2 ancho-max">
     <p class="card-text">
-      {tarea.text}
+      {{tarea.text}}
     </p>
-    <b-button href="#" variant="primary" disabled={tarea.disabled}>{tarea.textButton}</b-button>
+    <b-button :to="{name:tarea.toButtom}" variant="success" :disabled="tarea.disabled">{{tarea.textButton}}</b-button>
   </b-card>
-
-  <!-- <b-card-group deck>
-        <b-card title="Title"
-                img-src="https://lorempixel.com/300/300/"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This is a wider card with supporting text below as a
-                natural lead-in to additional content. This content
-                is a little bit longer.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-        <b-card title="Title"
-                img-src="https://lorempixel.com/300/300/"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This card has supporting text below as a natural lead-in
-                to additional content.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-        <b-card title="Title"
-                img-src="https://lorempixel.com/300/300/"
-                img-alt="Img"
-                img-top>
-            <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-            </p>
-            <div slot="footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </b-card>
-    </b-card-group> -->
   </div>
 </template>
 <script>
+const Props = {
+  tarea: {
+    title: { type: String, required: true },
+    disabled: { type: Boolean, default: false, required: false },
+    text: { type: String, required: false },
+    textButton: { type: String, required: true },
+    img: { type: String, required: false },
+    toButtom: { type: String, required: true },
+    imgAlt: { type: String, required: false },
+  },
+};
+// const Props = ['tarea'];
+
 export default {
   name: 'Card',
-  props: {
-    tarea: {
-      title: { type: String, required: true },
-      disabled: { type: String, default: false, required: false },
-      text: { type: String, required: false },
-      textButton: { type: String, required: true },
-      img: { type: String, required: false },
-      toButtom: { type: String, required: true },
-    },
-  },
+  props: Props,
   data() {
     return {
-
+      // irA: tarea.toButtom,
     };
   },
 };
