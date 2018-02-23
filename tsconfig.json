@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
+    // this aligns with Vue's browser support
     "target": "es6",
-    "module": "es6",
-    "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
-    "jsx": "react",
+    // this enables stricter inference for data properties on `this`
+    "strict": true,
     "sourceMap": true,
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true
+    // if using webpack 2+ or rollup, to leverage tree shaking:
+    "module": "es2015",
+    "moduleResolution": "node"
   },
-  "compileOnSave": false,
   "exclude": [
     "node_modules"
   ]

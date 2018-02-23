@@ -1,0 +1,1 @@
+Para quitar el hash de produccion, hay que meterese enrouter.vue.js.org y poner la configuracion en el servidor que indica. (es para que aparezca solo la URL inicial SPA)
