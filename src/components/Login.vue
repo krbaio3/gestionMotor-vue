@@ -30,7 +30,7 @@ export default Vue.extend({
     loginApp() {
       console.log('Login');
       this.$router.push({
-        name: 'Hola',
+        name: 'Home',
       }, this.onCompletado);
     },
   },
