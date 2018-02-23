@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HolaMundo from '@/components/holaMundo';
-import Login from '@/components/login';
+import Login from '@/components/Login';
 
 Vue.use(Router);
 
@@ -13,12 +13,12 @@ export default new Router({
     },
     {
       path: '/hola',
-      name: 'hola',
+      name: 'Hola',
       component: HolaMundo,
     },
     {
       path: '/login',
-      name: 'login',
+      name: 'Login',
       component: Login,
     },
   ],
