@@ -1,5 +1,5 @@
 <template>
-  <div v-show="loading">
+  <div v-show="loading" class="posicion">
     <!-- <i class="fa fa-spinner fa-spin fa-5x"></i> -->
     <i class="fa fa-cog fa-spin fa-5x"></i>
     <p v-text="mensaje"></p>
@@ -24,4 +24,19 @@ export default class Loading extends Vue {
 }
 </script>   
 <style lang="scss" scoped>
+.posicion{
+  position: absolute;
+  background-color: black;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  i {
+    margin-top: 35%;
+    color: green;
+  }
+  p {
+    color: darkgoldenrod;
+  }
+}
 </style>

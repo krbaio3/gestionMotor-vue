@@ -16,7 +16,6 @@ module.exports = {
     vendor: [
       'vue',
       'bootstrap-vue',
-      'vue-resource',
       'vue-router'
     ],
   },

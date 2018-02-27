@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div >
     <!-- Cuando entra, pone el display a none, mas adelante, lo pone transparente, cuando termina de ejecutar la 
     query el vehicles, lanza el evento (callback) al hijo, para quitar el loading y el ponerse a display true -->
     <Loading :loading="loading"/>
-    <div id="vehicles" class="col-xs-4 col-lg-6" :class="{display: none}">
+    <div id="vehicles" class="col-xs-4 col-lg-6">
       <h1>Vehiculos</h1>
       <hr>
       <br>
@@ -148,6 +148,7 @@ export default Vue.extend({
       selected: null,
       power: null,
       cc: null,
+      loading: true,
       titleModal: 'Esto es un titulo de pruebas',
       textModal: 'Esto es un texto de pruebas',
       options: [
@@ -205,6 +206,11 @@ export default Vue.extend({
       .then((response) => {
         console.log('entra', response.data);
       });
+  },
+  created() {
+    setTimeout(() => {
+      // this.loading = false;
+    }, 3000);
   },
 });
 </script>
