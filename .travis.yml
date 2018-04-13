@@ -23,7 +23,7 @@ deploy:
   provider: heroku
   api_key:
     secure: $HEROKU_API_KEY
-  app: bzz-ng5
+  app: digital-workshop
   local_dir: dist
   skip_cleanup: true
-  on: ng5
+  on: develop
