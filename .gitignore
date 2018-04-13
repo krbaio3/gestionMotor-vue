@@ -19,3 +19,4 @@ selenium-debug.log
 # Personal 
 package-lock.json
 task_modules/*
+*.lock
