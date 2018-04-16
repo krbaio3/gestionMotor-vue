@@ -1,5 +1,6 @@
 <template>
   <div id="vehicles" class="col-xs-4 col-lg-6">
+    <img src="../../assets/img/logo.png" >
     <h1>Vehiculos</h1>
     <hr>
     <br>
@@ -72,7 +73,7 @@
       <InputSimple
         placeholder="Introduce Nº Bastidor..."
         icono="fa fa-car"
-        :value="response.vin"
+        :value="response.vin  "
        />
 
       <!-- Bloque de ITV -->

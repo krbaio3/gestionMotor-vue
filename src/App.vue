@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/css-logo.gif" alt="powered by css" height="32" width="32" id="imagen"/> 
+    <img src="./assets/img/css-logo.gif" alt="powered by css" height="32" width="32" id="imagen"/> 
     <label for="imagen"> 
       Development by CSS 
     </label>

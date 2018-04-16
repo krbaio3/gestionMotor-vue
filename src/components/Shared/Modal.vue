@@ -32,9 +32,9 @@ import axios from 'axios';
 })
 export default class Modal extends Vue {
   // data
-  file: any = null
+  file: any = null;
 
-  aux = []
+  aux = [];
 
   close(): void {
     console.log('cierra', this);
