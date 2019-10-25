@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "brand": "Motorauto",
+    "request": {
+      "appointment": "Request an Appointment",
+      "quote": "Request a Quote"
+    }
+  },
+  "modal": {
+    "appointment": "Solicitar Cita Previa",
+    "quote": "Solicitar Presupuesto",
+    "name": "nombre",
+    "last-name": "apellido",
+    "phone": "teléfono",
+    "email": "correo electrónico",
+    "brand": "marca",
+    "model": "modelo",
+    "licence": "matricula",
+    "service": "servicio"
+  }
+}

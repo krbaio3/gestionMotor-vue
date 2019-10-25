@@ -1,29 +1,42 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <NavBar />
+    <section>
+      <Carousel />
+    </section>
+    <section>
+      <Services />
+    </section>
+    <Parallax />
+    <section>
+      <Cards />
+    </section>
+    <Footer />
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script lang="ts">
+import Vue from 'vue';
+
+import NavBar from '@/components/NavBar.vue';
+import Footer from '@/components/Footer.vue';
+import Parallax from '@/components/Parallax.vue';
+import Cards from '@/components/Cards.vue';
+import Carousel from '@/components/Carousel.vue';
+import Services from '@/components/Services.vue';
+
+export default Vue.extend({
+  name: 'App',
+  components: {
+    NavBar,
+    Footer,
+    Parallax,
+    Cards,
+    Carousel,
+    Services,
+  },
+  data: () => ({
+    //
+  }),
+});
+</script>
