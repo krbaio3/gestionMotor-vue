@@ -1,42 +1,60 @@
 <template>
-  <div>
-    <b-card :title="tarea.title" :img-src="tarea.img"
-          :img-alt="tarea.imgAlt"
-          img-top tag="article"
-          class="mb-2 ancho-max">
-    <p class="card-text">
-      {{tarea.text}}
-    </p>
-    <b-button :to="{name:tarea.toButtom}" variant="success" :disabled="tarea.disabled">{{tarea.textButton}}</b-button>
-  </b-card>
-  </div>
+    <v-card flat class="transparent">
+        <v-card-text class="text-center" v-if="card.icon || card.opIcon">
+            <v-icon x-large class="blue--text text--lighten-2">{{card.icon}}</v-icon>
+            <v-icon x-large class="blue--text text--lighten-2">{{card.opIcon}}</v-icon>
+        </v-card-text>
+        <v-card-title primary-title class="layout justify-center">
+            <div class="headline text-center">{{card.title}}</div>
+        </v-card-title>
+        <v-card-text>
+            {{card.cardText}}
+        </v-card-text>
+        <v-list class="transparent" v-if="card.contact">
+            <v-list-item>
+                <v-list-item-action>
+                    <v-icon class="blue--text text--lighten-2">{{card.contact.iconPhone}}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{card.contact.phone}}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-action>
+                    <v-icon class="blue--text text--lighten-2">{{card.contact.iconMarker}}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{card.contact.marker}}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-action>
+                    <v-icon class="blue--text text--lighten-2">{{card.contact.iconEmail}}</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{card.contact.email}}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+        </v-list>
+    </v-card>
 </template>
-<script>
-const Props = {
-  tarea: {
-    title: { type: String, required: true },
-    disabled: { type: Boolean, default: false, required: false },
-    text: { type: String, required: false },
-    textButton: { type: String, required: true },
-    img: { type: String, required: false },
-    toButtom: { type: String, required: true },
-    imgAlt: { type: String, required: false },
-  },
-};
-// const Props = ['tarea'];
 
-export default {
-  name: 'Card',
-  props: Props,
-  data() {
-    return {
-      // irA: tarea.toButtom,
-    };
-  },
-};
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { ICard } from '../interfaces/ICard';
+@Component({
+    name: 'Card',
+})
+export default class Card extends Vue {
+    // @Prop({ required: true, type: String }) public readonly title!: string;
+    // @Prop({ required: false, type: String }) public readonly icon!: string;
+    // @Prop({ required: false, type: String }) public readonly opIcon!: string;
+    // @Prop({ required: true, type: String }) public readonly cardText!: string;
+    // @Prop({required: false, type: String}) public readonly contact!: ICard;
+    @Prop({required: true, type: Object}) public readonly card!: ICard;
+}
 </script>
-<style lang="scss" scoped>
-.ancho-max {
-  max-width: 20rem;
-} 
+
+<style scoped>
+
 </style>

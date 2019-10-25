@@ -1,0 +1,25 @@
+{
+  "navigation": {
+    "brand": "Motorauto",
+    "request": {
+      "appointment": "Solicitar Cita Previa",
+      "quote": "Solicitar Presupuesto"
+    },
+    "gallery": "Galería",
+    "offers": "Ofertas"
+  },
+  "modal": {
+    "appointment": "Solicitar Cita Previa",
+    "quote": "Solicitar Presupuesto",
+    "name": "Nombre*",
+    "last-name": "Apellidos",
+    "phone": "Teléfono*",
+    "email": "correo electrónico",
+    "brand": "Marca*",
+    "model": "Modelo*",
+    "licence": "Matricula",
+    "service": "Servicio",
+    "description": "Descripción",
+    "hintArea": "Describa brevemente su necesidad"
+  }
+}

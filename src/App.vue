@@ -1,52 +1,42 @@
 <template>
-  <div id="app">
-    <img src="./assets/css-logo.gif" alt="powered by css" height="32" width="32" id="imagen"/> 
-    <label for="imagen"> 
-      Development by CSS 
-    </label>
-    <header-nav :class="{ display : hide }"></header-nav>
-    <router-view @removeHeaders="hideHeaders"/>
-    <footer-nav :class="{ display : hide }"></footer-nav>
-  </div>
+  <v-app>
+    <NavBar />
+    <section>
+      <Carousel />
+    </section>
+    <section>
+      <Services />
+    </section>
+    <Parallax />
+    <section>
+      <Cards />
+    </section>
+    <Footer />
+  </v-app>
 </template>
 
-<script>
-import headerNav from '@/components/HeaderNav';
-import footerNav from '@/components/FooterNav';
-import home from '@/components/Home';
+<script lang="ts">
+import Vue from 'vue';
 
-export default {
+import NavBar from '@/components/NavBar.vue';
+import Footer from '@/components/Footer.vue';
+import Parallax from '@/components/Parallax.vue';
+import Cards from '@/components/Cards.vue';
+import Carousel from '@/components/Carousel.vue';
+import Services from '@/components/Services.vue';
+
+export default Vue.extend({
   name: 'App',
   components: {
-    headerNav,
-    footerNav,
-    home,
+    NavBar,
+    Footer,
+    Parallax,
+    Cards,
+    Carousel,
+    Services,
   },
-  data() {
-    return {
-      hide: true,
-    };
-  },
-  methods: {
-    hideHeaders(event) {
-      console.log('ocultar', event);
-      this.hide = event;
-    },
-  },
-};
+  data: () => ({
+    //
+  }),
+});
 </script>
-
-<style lang="scss">
-@import "./styles/styles.scss";
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.display {
-  display: none;
-}
-</style>
